@@ -109,7 +109,7 @@ def calculate_bound(args, read_tool, read_calculation=None):
     return result
 
 
-def assumption_matches(provenance, prompt):
+def assumption_matches(provenance, prompt, *, read_only_spending=False):
     """Bind a declared numeral to original text, without claiming intent inference.
 
     Deliberately bounded to a single explicit yuan amount in the quote. Other
@@ -124,6 +124,12 @@ def assumption_matches(provenance, prompt):
     if not bound:
         return False
     amounts = re.findall(r'(?<![\d.,A-Za-z_])(-?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d{1,2})?)\s*(万?元)', quote)
+    if not amounts:
+        if isinstance(prompt, AssumptionScope):
+            return prompt.omitted_spending_matches(quote, provenance.get('value_minor'))
+        if read_only_spending:
+            from .spending_amount import omitted_yuan_matches
+            return omitted_yuan_matches(quote, prompt, provenance.get('value_minor'))
     if len(amounts) != 1:
         return False
     amount, unit = amounts[0]

@@ -14,9 +14,10 @@ INTENTS = frozenset({'cashflow_compare', 'cashflow_forecast'})
 ROLES = {'date_text': 'SPENDING_DATE', 'through_date_text': 'FORECAST_CUTOFF'}
 DAY_TOKEN = r'(?<![\d年])' + DATE_ATOM + r'(?![\d年月日号])'
 CUTOFF = re.compile(r'(?:截至|截止到?|预测到)\s*(?P<date>' + DAY_TOKEN + ')')
-SPENDING = re.compile(r'(?P<date>' + DAY_TOKEN + r')\s*(?:拟|将|要)?(?:消费|花|支出)\s*'
-                      r'\d+(?:\.\d{1,2})?\s*元')
-EXPENSE = re.compile(r'(?:消费|花|支出)\s*\d+(?:\.\d{1,2})?\s*元|消费与不消费|和不花相比')
+from src.bank_evidence.spending_amount import AMOUNT, VERB
+SPENDING = re.compile(r'(?P<date>' + DAY_TOKEN + r')\s*(?:想要|想|打算|计划|准备|拟|将|要)?'
+                      + VERB + r'\s*' + AMOUNT)
+EXPENSE = re.compile(VERB + r'\s*' + AMOUNT + r'|消费与不消费|和不花相比')
 BLOCK = re.compile(r'[^；;。\n！？!?]+')
 UNCERTAIN = re.compile(r'不是|不在|别在|取消|或|大约|左右|差不多|不要(?=(?:在)?(?:'
                        + DATE_ATOM + r'|截至|截止|预测到))')

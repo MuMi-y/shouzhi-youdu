@@ -22,7 +22,7 @@ def field_list(value, allowed):
     return set(value)
 
 
-def validate_slot(field, slot, messages, tool_records=(), source_contract="legacy_source_v1", *, cashflow=False):
+def validate_slot(field, slot, messages, tool_records=(), source_contract="legacy_source_v1", *, cashflow=False, read_only_spending=False):
     validate_slot_structure(field, slot, source_contract)
     source = slot['source']
     identifier, quote = source['message_id'], source['quote']
@@ -56,7 +56,8 @@ def validate_slot(field, slot, messages, tool_records=(), source_contract="legac
         return deepcopy(slot)
     if FIELD_SPECS[field].value_type == 'integer_minor':
         require(type(value) is int and 0 <= value <= 100_000_000_000 and
-                assumption_matches({'quote': quote, 'value_minor': value}, messages[identifier]), 'UNBOUND_SLOT_AMOUNT')
+                assumption_matches({'quote': quote, 'value_minor': value}, messages[identifier],
+                    read_only_spending=read_only_spending and field in {'expense_minor', 'amount_minor'}), 'UNBOUND_SLOT_AMOUNT')
     else:
         from .normalization import sourced_day, date_atom
         equivalent_day = (field in {'start_date', 'end_date'} or
@@ -135,7 +136,8 @@ def validate(items, context, tool_records=()):
             else:
                 validated = (profile_reference[0][field] if profile_reference and field in profile_reference[0]
                              else validate_slot(field, slot, messages, tool_records, context.get("source_contract", "legacy_source_v1"),
-                                                cashflow=intent in CASHFLOW))
+                                                cashflow=intent in CASHFLOW,
+                                                read_only_spending=intent == 'cashflow_compare' and action['effective_kind'] == 'ANALYZE'))
             # A revision is explicit and must come from the current message.
             if field not in slots or slots[field] != validated:
                 require(validated['source']['message_id'] == context['current_message_id'], 'REVISION_REQUIRES_CURRENT_MESSAGE')
@@ -206,7 +208,11 @@ def assumptions(decision, context):
     messages = {row['message_id']: row['text'] for row in context['messages']}
     selected = tuple((messages[slot['source']['message_id']], slot['value'])
                      for item in decision['items'] for field, slot in item['slots'].items() if field in AMOUNTS)
-    return AssumptionScope(selected)
+    spending = tuple((messages[slot['source']['message_id']], slot['value'])
+                     for item in decision['items'] if item['intent'] == 'cashflow_compare'
+                     and item['action']['effective_kind'] == 'ANALYZE'
+                     for field, slot in item['slots'].items() if field in {'expense_minor', 'amount_minor'})
+    return AssumptionScope(selected, spending)
 
 
 def validate_questions(answer, decision):

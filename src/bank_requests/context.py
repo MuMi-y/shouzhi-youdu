@@ -78,6 +78,10 @@ def model_prompt(context):
             '未指定账户才可省略source_account和account_id；未知/歧义账户先澄清，不扩大范围。'
             '只查询、不转账、不创建计划或办理操作是禁止写，不否定同句之外明确的账单期间；'
             '这些限制必须保留在action原话中，并用ANALYZE，不能标PREPARE。\n')
+        instruction += ('\n人民币只读消费比较cashflow_compare且action=ANALYZE时，明确“花费/花/消费/支出+数额”可省略元，例如“今天想要花费1500买手机”。'
+            'expense_minor以分表示且引用原话消费数额，日期引用原日期词；计算的user_assumption也保留原话，不添加用户没说的元。'
+            '裸数字、型号、外币、多金额选择或约数仍须澄清；本规则不适用于准备转账/付款或保存安排。'
+            '未指定预测截止时，可按forecast工具政策用all核对有效计划，工具窗口只作为本次比较范围，不能冒称用户指定或永久安全。\n')
         if protocol == "minimal_source_v2":
             import re
             instruction = re.sub(r"显式兼容source可加.*?date_text和latest_date_text", "date_text和latest_date_text", instruction)

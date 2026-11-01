@@ -53,7 +53,7 @@ def render(balance, calc, baseline, proposed, arrangements, proposed_args):
             f"{a['title']}，原定{a['due_date']}，{money(a['amount_minor'])}，仍是安排、未证明到账" for a in incomes) + '。')
     else:
         lines.append('本轮未查到有效未来收入安排，不额外假定收入。')
-    lines.append(f"比较窗口为{proposed['as_of_date']}至{proposed['through_date']}：\n"
+    lines.append(f"本次工具比较窗口为{proposed['as_of_date']}至{proposed['through_date']}：\n"
                  + forecast_line('不新增消费', baseline) + '\n' + forecast_line('新增这笔消费', proposed))
     omitted = [a for a in active if a['due_date'] > proposed['through_date']]
     if omitted:

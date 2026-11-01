@@ -2,8 +2,8 @@
   "project": "收支有度",
   "team": "从容计划",
   "date": "2026-11-01",
-  "scope": "代码、部署与解释性文件；只读查询与账户范围修复；不含参赛附件",
-  "base_commit": "e3a9b0167e04fa431fa3d42b72502637c48946a5",
+  "scope": "代码、部署与解释性文件；只读账单与消费咨询修复；不含参赛附件",
+  "base_commit": "3ce02b37b8630761594d4f39000c2d9a4df28594",
   "files": [
     {
       "path": ".gitattributes",
@@ -87,8 +87,8 @@
     },
     {
       "path": "docs/HOTFIX_20261101.md",
-      "bytes": 1611,
-      "sha256": "4a7788bca39a8931f96e359e75062ff295f2c7ff86203dae27764c17c45b1ddc"
+      "bytes": 2570,
+      "sha256": "b622f38745c31f2acea5d35dfc4d889ee0b57e9066965e48204bea632d15e497"
     },
     {
       "path": "docs/有数_20261027体验版使用说明.md",
@@ -342,8 +342,8 @@
     },
     {
       "path": "src/bank_evidence/assumption_scope.py",
-      "bytes": 426,
-      "sha256": "7e1d8f8cb956f1d5a1a91e198dd6cbc9ca6ee91c68e73e858779b2d39d1e986f"
+      "bytes": 830,
+      "sha256": "54a4db5338699b3357246a43d6ed3347a46bbf85353094331262c2627cda963c"
     },
     {
       "path": "src/bank_evidence/billing_answer.py",
@@ -357,8 +357,8 @@
     },
     {
       "path": "src/bank_evidence/calculation.py",
-      "bytes": 8807,
-      "sha256": "e9c44dfa8470f68f7ec316479f513c912b92d52771c3ca8625c448b3b6db7c97"
+      "bytes": 9172,
+      "sha256": "42afd60db1186bf408ef5e2bf2c40530efcc0b05ce2176eda7cb136de525fe78"
     },
     {
       "path": "src/bank_evidence/calculation_store.py",
@@ -411,9 +411,14 @@
       "sha256": "5c6938e6ce97bd47a436f4abcbd01a5853a600df31763c1a307cff54cc003911"
     },
     {
+      "path": "src/bank_evidence/spending_amount.py",
+      "bytes": 2727,
+      "sha256": "1495a540ed588ebf9f0bdfc9b6500a7758d77df0912a4f1015bb54e00603ce36"
+    },
+    {
       "path": "src/bank_evidence/spending_answer.py",
-      "bytes": 9177,
-      "sha256": "c9838e09b0ca686f6679fd741db845a2d186d79c6684d72bde279363aaaf012d"
+      "bytes": 9189,
+      "sha256": "29a45cf73fe77ca48cde62920a47cbf4b55028ba234983444adf77039dddc444"
     },
     {
       "path": "src/bank_evidence/transfer_shortfall.py",
@@ -577,8 +582,8 @@
     },
     {
       "path": "src/bank_requests/cashflow_dates.py",
-      "bytes": 12196,
-      "sha256": "73a5ec179ba6c04a5535632cb41bd688eee534abc1694d619e3e651f6b619d63"
+      "bytes": 12239,
+      "sha256": "6d1470b05e18ee50d130d53a33d7b13b009fd387d2062dc579cca083da0fd620"
     },
     {
       "path": "src/bank_requests/components.py",
@@ -592,13 +597,13 @@
     },
     {
       "path": "src/bank_requests/context.py",
-      "bytes": 18341,
-      "sha256": "4da3f3ae5140025ef2f7747192108f2863366d29bf0543d949678a1d7e86d229"
+      "bytes": 19037,
+      "sha256": "82a21e8b0ffccf67f4365f209a2064e5c88de6bd62e2c817f801ee6854d4aabe"
     },
     {
       "path": "src/bank_requests/decision.py",
-      "bytes": 14637,
-      "sha256": "0a1ed9354697163dc5d7214bc20dc780f0e60c231cea577501d35b09f01e6545"
+      "bytes": 15272,
+      "sha256": "554c65b10a19338e499352a61dc4f374d250a8e7a498c6df7128ea650d3ff0df"
     },
     {
       "path": "src/bank_requests/delivery.py",
@@ -657,8 +662,8 @@
     },
     {
       "path": "src/bank_requests/response.py",
-      "bytes": 7721,
-      "sha256": "86e36d1ab986b7e6cda75e9904d423eb6a510f8934846551827f2dde60e28a7a"
+      "bytes": 9867,
+      "sha256": "1a5fb9726b9d0440f3344bf75f95476d243ba0b8e15244fe48ac53105fe13695"
     },
     {
       "path": "src/bank_requests/schema.py",
@@ -1361,6 +1366,11 @@
       "sha256": "4d24acad2532cf719303ecaf1cd3e4d2931c8a8161439e3faa8b265122ffdc53"
     },
     {
+      "path": "tests/competition_ai/test_request_failure_messages.py",
+      "bytes": 3130,
+      "sha256": "214404da950a0b135657cca87001216b4259a9f2179d9186dc38018897b685d6"
+    },
+    {
       "path": "tests/competition_ai/test_request_gateway.py",
       "bytes": 23733,
       "sha256": "94f697c97e0126c7590210a78f99ec5852ef5882e1f4b075f6fb9198ec17bee1"
@@ -1409,6 +1419,11 @@
       "path": "tests/competition_ai/test_shared_display_check.py",
       "bytes": 2557,
       "sha256": "4d06931eaf1b7581df298088b032d95acb5d4c9929cd2217fc6483b904dabed6"
+    },
+    {
+      "path": "tests/competition_ai/test_spending_amount.py",
+      "bytes": 4129,
+      "sha256": "b7494253dfb3483f00b5a95c8097adfac907b8ef9c15a654b8dbdd2401e12c8b"
     },
     {
       "path": "tests/competition_ai/test_spending_answer.py",

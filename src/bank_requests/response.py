@@ -21,6 +21,36 @@ GOAL_RECOVERY_MESSAGE = ('这次目标的条件或原话还没核对清楚，分
                          '你可以打开目标表单，核对日期、金额和用途后直接比较方案；不会自动保存或办理。')
 
 
+def readonly_failure_message(result, reason):
+    """Explain paired read-tool analysis without making claims about all bank activity."""
+    from src.bank_evidence.answer import paired_records
+    reason = reason if isinstance(reason, str) else ''
+    reads = {'accounts', 'arrangements', 'forecast', 'money_calculate',
+             'transactions', 'spending_summary', 'billing_report'}
+    trace = result.get('trace', [])
+    if not isinstance(trace, list):
+        return None
+    requests = [row for row in trace if isinstance(row, dict) and row.get('kind') == 'request']
+    if not requests or any(row.get('name') not in reads for row in requests):
+        return None
+    try:
+        paired_records(trace, include_failures=True)
+    except (ValueError, TypeError, KeyError, AttributeError):
+        return None
+    spending = any(row['name'] == 'forecast' and
+                   isinstance(row.get('arguments'), dict) and
+                   row['arguments'].get('proposed_expense_minor', 0)
+                   for row in requests)
+    if spending:
+        issue = ('金额' if reason == 'UNBOUND_SLOT_AMOUNT' else
+                 '日期条件' if 'DATE' in reason or 'CUTOFF' in reason else '分析依据')
+        return (f'我这次没能正确核对这笔消费的{issue}，暂时不能可靠判断是否适合买。'
+                '这是分析未完成的提示，不是银行的拒付回执。'
+                '你可以打开“我的计划”中的“试算一笔日常支出”，输入金额和日期，直接比较对已有计划的影响。')
+    return ('我这次没能完成可靠的查询分析，暂时不能给出结论。'
+            '你可以先在银行工作台查看账本，或在“我的计划”中查看已有安排。')
+
+
 def can_recover_goal(result):
     """A manual form is a next step, never acceptance of a rejected answer."""
     trace = result.get('trace', [])
@@ -38,6 +68,10 @@ def recovery_view(result):
     if (not result.get('ok') and result.get('answer_validation', {}).get('status') == 'REJECTED'
             and can_recover_goal(result)):
         return {**result, 'recovery': dict(GOAL_RECOVERY), 'error': GOAL_RECOVERY_MESSAGE}
+    if not result.get('ok') and result.get('answer_validation', {}).get('status') == 'REJECTED':
+        message = readonly_failure_message(result, result['answer_validation'].get('reason', ''))
+        if message:
+            return {**result, 'error': message, 'failure_kind': 'ANALYSIS_VALIDATION'}
     return result
 
 
@@ -48,6 +82,8 @@ def rejection(result, reason):
     recovery = can_recover_goal(result)
     if recovery:
         message = GOAL_RECOVERY_MESSAGE
+    else:
+        message = readonly_failure_message(result, reason) or message
     return {**result, **({'recovery': dict(GOAL_RECOVERY)} if recovery else {}),
             'ok': False, 'model_ok': result.get('ok', False), 'session_id': None,
             'error': message,
