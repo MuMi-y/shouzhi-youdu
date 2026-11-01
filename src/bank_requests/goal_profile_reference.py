@@ -2,6 +2,7 @@
 from copy import deepcopy
 import re
 from src.bank_goals.evidence import digest
+from .write_prohibitions import mask as mask_write_prohibitions
 
 FORMAT = 'goal_profile_field_v1'
 FIELDS = {'goal_title': 'title', 'purpose': 'user_reason', 'priority': 'priority_reason'}
@@ -18,19 +19,27 @@ def require(value, code):
 
 def unresolved_source(message, values):
     """Conservative literal ambiguity boundary, not a general language parser."""
-    clauses = list(CLAUSE.finditer(message))
+    scoped_message = mask_write_prohibitions(message)
+    clauses = list(CLAUSE.finditer(scoped_message))
     locations = {}
     for field, text in values.items():
         require(message.count(text) == 1, 'UNRESOLVED_GOAL_PROFILE_SOURCE')
         start = message.index(text); end = start + len(text)
         clause = next((m for m in clauses if m.start() <= start and end <= m.end()), None)
-        require(clause is not None and not NEGATION.search(clause.group()), 'UNRESOLVED_GOAL_PROFILE_SOURCE')
+        require(clause is not None, 'UNRESOLVED_GOAL_PROFILE_SOURCE')
+        checked = clause.group()
+        if field == 'priority':
+            # A literal user preference may itself be negative (do not affect
+            # repayment). Negation outside the quoted preference still rejects.
+            local_start, local_end = start - clause.start(), end - clause.start()
+            checked = checked[:local_start] + ' ' * len(text) + checked[local_end:]
+        require(not NEGATION.search(checked), 'UNRESOLVED_GOAL_PROFILE_SOURCE')
         locations[field] = (start, end, clause)
     title, purpose = locations['goal_title'], locations['purpose']
     require(title[1] <= purpose[0] or purpose[1] <= title[0], 'UNRESOLVED_GOAL_PROFILE_SOURCE')
     first, second = sorted((title, purpose), key=lambda v: v[0])
-    identity_region = message[first[2].start():second[2].end()]
-    between_fields = message[first[1]:second[0]]
+    identity_region = scoped_message[first[2].start():second[2].end()]
+    between_fields = scoped_message[first[1]:second[0]]
     # Punctuation alone is not uncertainty. Conjunctions inside a complete purpose
     # (e.g. work and study) are not treated as two goals either.
     require(not NEGATION.search(identity_region) and not MULTIPLE.search(identity_region) and

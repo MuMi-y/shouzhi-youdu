@@ -3,6 +3,7 @@ from copy import deepcopy
 
 from src.bank_evidence.dialogue_parts import BANK_WRITES, outcome_key
 from .schema import needs_parameter_input
+from .write_prohibitions import spans as write_prohibitions
 
 
 KINDS = frozenset({'ANALYZE', 'PREPARE', 'CHECK_STATUS', 'UNDETERMINED'})
@@ -24,6 +25,8 @@ def normalize(action, context):
                 not 1 <= len(quote) <= 1000 or quote not in current['text']):
             raise ValueError('ACTION_REQUIRES_CURRENT_USER_SOURCE')
         source, contract = deepcopy(source), 'CURRENT_SOURCE_VALIDATED'
+        if kind == 'PREPARE' and write_prohibitions(current['text']):
+            raise ValueError('EXPLICIT_WRITE_PROHIBITION')
     readonly = bool(context['read_only'])
     effective = 'ANALYZE' if readonly and kind != 'CHECK_STATUS' else kind
     return {'kind': kind, 'source': source, 'effective_kind': effective,

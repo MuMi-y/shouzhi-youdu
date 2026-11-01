@@ -8,6 +8,7 @@ from datetime import date
 import re
 
 from .normalization import DATE_ATOM, calendar_day, date_atom, verified_business_day, source_record
+from .write_prohibitions import mask as mask_write_prohibitions
 
 INTENTS = frozenset({'cashflow_compare', 'cashflow_forecast'})
 ROLES = {'date_text': 'SPENDING_DATE', 'through_date_text': 'FORECAST_CUTOFF'}
@@ -118,7 +119,7 @@ def discoveries(message, spans):
                 left = max(block.rfind(c, 0, match.start()) for c in ('，', ',')) + 1
                 rights = [block.find(c, match.end()) for c in ('，', ',')]
                 right = min([p for p in rights if p >= 0] or [len(block)])
-                clause = block[left:right]
+                clause = mask_write_prohibitions(block[left:right])
                 values[field].append({'span': [start + match.start('date'), start + match.end('date')],
                     'atom': match['date'], 'uncertain': bool(UNCERTAIN.search(clause)),
                     'scope': [start, end]})

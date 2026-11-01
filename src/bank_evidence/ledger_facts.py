@@ -23,6 +23,8 @@ def project(tool, arguments, data, add):
         sections = [('指定期间', data, data)]
     else:
         report = data['report']
+        if arguments.get('account_id') != report.get('account_scope', {}).get('account_id'):
+            raise ValueError('BILLING_ACCOUNT_SCOPE_MISMATCH')
         sections = [('本期', report, report['totals'])]
         if report['previous_period'] is not None:
             prior = report['previous_period']
@@ -31,7 +33,10 @@ def project(tool, arguments, data, add):
         period = {'start': section['start_date'], 'end': section['end_date'],
                   'boundary': 'INCLUSIVE', 'relation': name,
                   'coverage': 'AVAILABLE_BANK_RECORDS_ONLY'}
+        account_id = arguments.get('account_id') if tool == 'billing_report' else None
+        if account_id is not None:
+            period['account_id'] = account_id
         for field, label in MONEY_FIELDS.items():
             if field in total:
-                add('COMBINED_ACCOUNT_LEDGER', field, total[field], unit='minor',
+                add(account_id or 'COMBINED_ACCOUNT_LEDGER', field, total[field], unit='minor',
                     label=f'{name}{label}', period=period, scenario='RECORDED_PERIOD_FLOW')

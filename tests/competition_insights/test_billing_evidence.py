@@ -233,9 +233,9 @@ class BillingServiceTests(unittest.TestCase):
         self.assertFalse(any(x['description']=='FORBIDDEN_DESCRIPTION' for x in groups['items']))
         self.assertEqual(5, response['data']['report']['totals']['count'])
 
-    def test_public_parameters_unchanged_and_description_advertises_boundaries(self):
+    def test_billing_optional_account_preserves_required_parameters_and_boundaries(self):
         spec = next(x for x in self.insight.tool_specs() if x['name']=='billing_report')
-        self.assertEqual({'start_date', 'end_date', 'compare_previous'}, set(spec['parameters']['properties']))
+        self.assertEqual({'start_date', 'end_date', 'compare_previous', 'account_id'}, set(spec['parameters']['properties']))
         self.assertEqual(['start_date', 'end_date'], spec['parameters']['required'])
         self.assertFalse(spec['parameters']['additionalProperties'])
         self.assertIn('最多20组', spec['description'])

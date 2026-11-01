@@ -2,7 +2,8 @@
   "project": "收支有度",
   "team": "从容计划",
   "date": "2026-11-01",
-  "scope": "代码、部署与解释性文件；不含参赛交付材料",
+  "scope": "代码、部署与解释性文件；只读查询与账户范围修复；不含参赛附件",
+  "base_commit": "e3a9b0167e04fa431fa3d42b72502637c48946a5",
   "files": [
     {
       "path": ".gitattributes",
@@ -16,8 +17,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3934,
-      "sha256": "dbdf82284cdb1da9edf83b5acf68efcf480c89fbef9f5e995239e46626090e32"
+      "bytes": 4000,
+      "sha256": "ce9881e57c1798a04f054053c7c92525e97c564f4506496f4104a7906d1869f7"
     },
     {
       "path": "config/model_route.json",
@@ -83,6 +84,11 @@
       "path": "docs/FINAL_CANDIDATE_20261029.md",
       "bytes": 220,
       "sha256": "bf009bd41e39273f491af6d4e1aabfc3eb35da147c11e0f93980710def2fc2e6"
+    },
+    {
+      "path": "docs/HOTFIX_20261101.md",
+      "bytes": 1611,
+      "sha256": "4a7788bca39a8931f96e359e75062ff295f2c7ff86203dae27764c17c45b1ddc"
     },
     {
       "path": "docs/有数_20261027体验版使用说明.md",
@@ -346,8 +352,8 @@
     },
     {
       "path": "src/bank_evidence/billing_render.py",
-      "bytes": 6669,
-      "sha256": "1e22e26d9fd50e921d976b0d91cc0f4b4bdbfe76e6b74f98198b7d02b3448b04"
+      "bytes": 6874,
+      "sha256": "dc64c2e4e096a918510111efac365d50982233d417de6c78fa4814c5cc62f30a"
     },
     {
       "path": "src/bank_evidence/calculation.py",
@@ -391,8 +397,8 @@
     },
     {
       "path": "src/bank_evidence/ledger_facts.py",
-      "bytes": 2125,
-      "sha256": "a72da164b8954354f0ec9d9858d518e514e7bee753f2902b680a9336b8553cee"
+      "bytes": 2463,
+      "sha256": "4bf200b5badccd88a0c2182b7b6cd2e9715dbac51d2b44748b14989774944db6"
     },
     {
       "path": "src/bank_evidence/service_answer.py",
@@ -541,8 +547,8 @@
     },
     {
       "path": "src/bank_insights/service.py",
-      "bytes": 21289,
-      "sha256": "e3d546bbce7b5226e29d826a80074fd09cf3b428242c9b1856b98fcdb7c861aa"
+      "bytes": 22638,
+      "sha256": "195484acff08a8ec4e58ac43947af4eca8c45a19e27375668387163c9851644c"
     },
     {
       "path": "src/bank_requests/__init__.py",
@@ -551,8 +557,8 @@
     },
     {
       "path": "src/bank_requests/actions.py",
-      "bytes": 5210,
-      "sha256": "561592baac66b54439d1887bb6b90f0b25b06f0dc8c112450b08484b1f97ade4"
+      "bytes": 5399,
+      "sha256": "e9a9b763113c315c6c691bdf44a562bda9ce943bd25c44bf7da5c1e4727211ab"
     },
     {
       "path": "src/bank_requests/attempt_projection.py",
@@ -560,14 +566,19 @@
       "sha256": "84b56be7ac185896e1207b92794cbdab32da2f4fa2cca857a05416ab075d519d"
     },
     {
+      "path": "src/bank_requests/billing_accounts.py",
+      "bytes": 2014,
+      "sha256": "d98e23123af8633ff2d212f4498d2e6f2233efbbb13b4f1fab9be2cc9d779cc2"
+    },
+    {
       "path": "src/bank_requests/billing_dates.py",
-      "bytes": 16240,
-      "sha256": "b4800ad805321a5adfc74a81149a436f0f5e3dcba12a653f0a5817e3c52f2ef5"
+      "bytes": 16090,
+      "sha256": "704fa5d4c5c18c65e9941284fc20c775a11f656c6702bea5287238ccf309df29"
     },
     {
       "path": "src/bank_requests/cashflow_dates.py",
-      "bytes": 12107,
-      "sha256": "5caaa44605d8086f4028c4cf3a3904a5659a8f1d1b73d4258fbb169082e66b49"
+      "bytes": 12196,
+      "sha256": "73a5ec179ba6c04a5535632cb41bd688eee534abc1694d619e3e651f6b619d63"
     },
     {
       "path": "src/bank_requests/components.py",
@@ -576,18 +587,18 @@
     },
     {
       "path": "src/bank_requests/constraints.py",
-      "bytes": 20306,
-      "sha256": "2ac4b3f35b53abede4301db51b4378247535eedcb146dc27480229c4dfe1a5a5"
+      "bytes": 20615,
+      "sha256": "f3438bb05133178e7a2cce442de7f812527efb823c85c42501c59c5ee83c757b"
     },
     {
       "path": "src/bank_requests/context.py",
-      "bytes": 17610,
-      "sha256": "c2b9ca9afd8a51fe3ff097d771d400e533aa4f19b3314bbf5b6fac649df93dd4"
+      "bytes": 18341,
+      "sha256": "4da3f3ae5140025ef2f7747192108f2863366d29bf0543d949678a1d7e86d229"
     },
     {
       "path": "src/bank_requests/decision.py",
-      "bytes": 14486,
-      "sha256": "10ba92863ba8bc2309b2fb2c68b09e43dbff0932637a121d5b9da81b4c9f40a1"
+      "bytes": 14637,
+      "sha256": "0a1ed9354697163dc5d7214bc20dc780f0e60c231cea577501d35b09f01e6545"
     },
     {
       "path": "src/bank_requests/delivery.py",
@@ -616,13 +627,13 @@
     },
     {
       "path": "src/bank_requests/goal_profile_reference.py",
-      "bytes": 8318,
-      "sha256": "defb67cb2c8b548e77138acfa7ec60ce8307d5fa23731f2d534831c123bb7b33"
+      "bytes": 8886,
+      "sha256": "adc203442e4bd3567f8904958822c98cee8f40504a852af586445bdf24bd7238"
     },
     {
       "path": "src/bank_requests/normalization.py",
-      "bytes": 13299,
-      "sha256": "3d945d33dfaead21968bc7c51167e6c04018da18ae3c6910d37d5d87998d9480"
+      "bytes": 13388,
+      "sha256": "91fd6449f8fef547a24bc64fdd572f71a53d2cb3936b45dcddce6bee5d208a23"
     },
     {
       "path": "src/bank_requests/objects.py",
@@ -651,8 +662,13 @@
     },
     {
       "path": "src/bank_requests/schema.py",
-      "bytes": 13796,
-      "sha256": "7d5135664c668efd44c3f2a4eb388b12edf2f203133b77b718567a15323c08da"
+      "bytes": 13814,
+      "sha256": "fc9bdb2e7d2f5f0c66bf8ef215a861af5271625e247ef8718f08407a22294685"
+    },
+    {
+      "path": "src/bank_requests/write_prohibitions.py",
+      "bytes": 1584,
+      "sha256": "81a3eb1d2f737d07b983792732ee9b3318da19491698eeacfb6d58d9d22c1d45"
     },
     {
       "path": "src/bank_tasks/__init__.py",
@@ -1305,6 +1321,11 @@
       "sha256": "ad64b1a52c7f744604f13929d68aed09f3c65870a91384f74b11af648a153ffd"
     },
     {
+      "path": "tests/competition_ai/test_readonly_billing_scope.py",
+      "bytes": 10066,
+      "sha256": "62678a9dd0fdc6599e64e6655c28de8bb4804a6895d0553e4be25ffb9ebf4f13"
+    },
+    {
       "path": "tests/competition_ai/test_receipt_repair.py",
       "bytes": 13638,
       "sha256": "5e6a91f3f47c9527b6c51a6936e5fee06ec3ca1abbdca4c0354345b9816e7d34"
@@ -1446,8 +1467,8 @@
     },
     {
       "path": "tests/competition_insights/test_billing_evidence.py",
-      "bytes": 15041,
-      "sha256": "cb4c9e02a6e03c4ee29e23089b0f43c10f5ffe57264df6cce53591611bd1192d"
+      "bytes": 15059,
+      "sha256": "ec6096fc2f7632bb738d42af7ce3d3235da7cf310a861a1ad6010548aa741d00"
     },
     {
       "path": "tests/competition_insights/test_billing_kind_summaries.py",

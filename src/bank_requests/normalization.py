@@ -4,6 +4,7 @@ import calendar
 import re
 
 from src.bank_v1.common import evidence, canonical
+from .write_prohibitions import mask as mask_write_prohibitions
 
 
 PERIOD_WORDS = {'CURRENT_MONTH': ('本月', '这个月'), 'PREVIOUS_MONTH': ('上月', '上个月'),
@@ -33,7 +34,7 @@ def date_source_is_explicit(quote, message):
     """Do not turn a date inside a negated/alternative clause into a choice."""
     if date_atom(quote) is None:
         return False
-    clauses = re.split(r'[，,。；;！!？?\n]', message)
+    clauses = re.split(r'[，,。；;！!？?\n]', mask_write_prohibitions(message))
     matching = [clause for clause in clauses if quote in clause]
     return bool(matching) and all(
         not re.search(r'不是|不要|不在|别在|取消|不用|或', clause)

@@ -1,5 +1,5 @@
 """Fixed-identity read-only bank adapter and separate durable user feedback."""
-from contextlib import contextmanager
+from contextlib import contextmanager, closing
 from datetime import date, datetime, timedelta, timezone
 import json
 from pathlib import Path
@@ -28,7 +28,8 @@ def tool_specs():
     period = {'type': 'string', 'format': 'date'}
     definitions = [
         ('billing_report', '请求日期区间账单及前一等长期间比较，退款/内部转账分离；按amounts展示金额。period_metadata分别标明本期/前期起止、含首尾天数及完整单自然月或任意窗口；完整月不证明资料齐全。任意窗口只称该期间，完整月只称那个月，不称稳定每月结余或未来存钱能力。metrics给出消费/收入及净流入/收入两个独立比例，不自行取补数，净流入不等于可支配储蓄。description_groups按原描述和交易类型分组，最多20组，截断及遗漏金额/笔数明确；原描述不等于商户身份或行业，编号不能推语义。description_comparison在完整原描述×交易类型并集上比较后再显示前20组，按每组change的整数分及debit/credit_change_rate.change_percent展示变化；比例定义在根metric_definitions，路径相对各item，不挪用全期同值差额。两期未观察到与未显示不同；说其余不变须核完整changed_group_count及kind_summary/隐藏变化计数，不能因隐藏净差为0断言没有变化。NOT_REQUESTED表示未计算，不是零变化；原描述不是商户身份、组流量不是当前余额，资料不保证现实全量。不能代替周期识别；周期候选用recurring_candidates，变化刷新用check_insights。',
-         {'start_date': period, 'end_date': period, 'compare_previous': {'type': 'boolean'}}, ['start_date', 'end_date']),
+         {'start_date': period, 'end_date': period, 'compare_previous': {'type': 'boolean'},
+          'account_id': {'type': 'string', 'description': '可选；已授权账户ID。用户指定账户时必须传入；省略为全部已授权账户合计。'}}, ['start_date', 'end_date']),
         ('recurring_candidates', '读取已扫描周期扣费候选、具名观察字段和用户反馈，用于周期/订阅取证；候选不证明合同或正式代扣，不查询授权；本次变化检查用check_insights刷新。', {}, []),
         ('insight_status', '仅读取已有关注项及提醒缓存，不扫描流水，不等于重新检查；历史提醒是否仍有效见status。', {}, []),
         ('check_insights', '用户要求检查、重新检查或查有没有变化时先调用本工具；扫描已授权完整流水并记录有限候选及去重提醒。insight_status仅读缓存不等于扫描。本工具不修改银行资金或查询正式代扣。', {}, [])]
@@ -84,7 +85,7 @@ class InsightService:
             raise ValueError('clock must return aware datetime')
         return now.astimezone(timezone(timedelta(hours=8)))
 
-    def _rows(self):
+    def _rows(self, account_id=None):
         now = self._now()
         db = sqlite3.connect(Path(self.bank.db_path).resolve().as_uri()+'?mode=ro', uri=True)
         db.row_factory = sqlite3.Row
@@ -92,8 +93,9 @@ class InsightService:
             db.execute('PRAGMA query_only=ON')
             db.execute('BEGIN')
             rows = db.execute('''SELECT t.*,a.currency FROM transactions t JOIN accounts a USING(account_id)
-                WHERE a.subject_id='U1' AND t.business_date<=? ORDER BY t.business_date,t.transaction_id''',
-                (now.date().isoformat(),)).fetchall()
+                WHERE a.subject_id='U1' AND t.business_date<=?
+                AND (? IS NULL OR a.account_id=?) ORDER BY t.business_date,t.transaction_id''',
+                (now.date().isoformat(), account_id, account_id)).fetchall()
             result = []
             for row in rows:
                 created = datetime.fromisoformat(row['created_at'])
@@ -123,6 +125,16 @@ class InsightService:
         if type(args) is not dict or set(args)-set(schema['properties']) or set(schema['required'])-set(args):
             raise InsightError('INVALID_ARGUMENTS', '缺少必要参数或存在未知字段')
         if name == 'billing_report':
+            account_id = args.get('account_id')
+            account_scope = {'kind': 'ALL_AUTHORIZED_ACCOUNTS', 'subject_id': 'U1'}
+            if 'account_id' in args:
+                if type(account_id) is not str or not account_id:
+                    raise InsightError('INVALID_ARGUMENTS', 'account_id须为已授权账户ID')
+                with closing(sqlite3.connect(Path(self.bank.db_path).resolve().as_uri()+'?mode=ro', uri=True)) as db:
+                    account = db.execute("SELECT account_id,name FROM accounts WHERE subject_id='U1' AND account_id=?", (account_id,)).fetchone()
+                if account is None:
+                    raise InsightError('ACCOUNT_NOT_AUTHORIZED', '账户不存在或未授权，未扩大查询范围')
+                account_scope = {'kind': 'ACCOUNT', 'subject_id': 'U1', 'account_id': account[0], 'account_name': account[1]}
             valid_date(args['start_date']); valid_date(args['end_date'])
             if args['start_date'] > args['end_date'] or args['end_date'] > self._now().date().isoformat():
                 raise InsightError('INVALID_ARGUMENTS', '账单区间不得倒置或包含未来')
@@ -133,7 +145,10 @@ class InsightService:
                 days = (date.fromisoformat(args['end_date'])-start).days+1
                 if (start-date.min).days < days:
                     raise InsightError('INVALID_ARGUMENTS', '前一等长区间超出日期范围，请关闭前期比较')
-            return self._wrap({'report': build_report(self._rows(), currency='CNY', policy=self._policy, **args)})
+            period_args = {key: value for key, value in args.items() if key != 'account_id'}
+            report = build_report(self._rows(account_id), currency='CNY', policy=self._policy, **period_args)
+            report['account_scope'] = account_scope
+            return self._wrap({'report': report})
         if name == 'check_insights': return self.check()
         data = self.state()
         return self._wrap({'candidates': data['candidates']} if name == 'recurring_candidates' else data)

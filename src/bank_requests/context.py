@@ -72,7 +72,12 @@ def model_prompt(context):
     from .goal_profile_reference import model_instruction as goal_reference_instruction
     while True:
         protocol = chosen.get("source_contract", "legacy_source_v1")
-        instruction = INSTRUCTION
+        instruction = INSTRUCTION + ('\n账单账户范围：billing_report新增可选account_id，省略时只表示全部已授权账户合计。'
+            '用户指定日常账户/储备账户或A/B时，先查accounts，以billing项source_account绑定原名称/编号，'
+            '并向billing_report传同一account_id；不能省略用户账户限制，也不能把合计报告叫单账户。'
+            '未指定账户才可省略source_account和account_id；未知/歧义账户先澄清，不扩大范围。'
+            '只查询、不转账、不创建计划或办理操作是禁止写，不否定同句之外明确的账单期间；'
+            '这些限制必须保留在action原话中，并用ANALYZE，不能标PREPARE。\n')
         if protocol == "minimal_source_v2":
             import re
             instruction = re.sub(r"显式兼容source可加.*?date_text和latest_date_text", "date_text和latest_date_text", instruction)

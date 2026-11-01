@@ -13,7 +13,7 @@ DAY_FIELDS = frozenset({'date_text', 'latest_date_text'})
 DATE_FIELDS = DAY_FIELDS | {'through_date_text'}
 FIELDS = {
     'account_overview': ACCOUNTS,
-    'billing': frozenset({'period_text', 'start_date', 'end_date'}),
+    'billing': frozenset({'period_text', 'start_date', 'end_date', 'source_account'}),
     'transfer': ACCOUNTS | AMOUNTS | {'date_text'},
     'transfer_advice': ACCOUNTS | AMOUNTS | {'date_text'},
     'cashflow_compare': ACCOUNTS | AMOUNTS | {'date_text', 'through_date_text', 'purpose'},

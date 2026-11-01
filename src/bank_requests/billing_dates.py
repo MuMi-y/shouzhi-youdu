@@ -5,6 +5,7 @@ from copy import deepcopy
 from datetime import date
 
 from .normalization import calendar_day, period_range, verified_business_day, PERIOD_WORDS
+from .write_prohibitions import mask as mask_write_prohibitions
 
 
 ATOM = r'(?:\d{4}-\d{2}-\d{2}|\d{4}年\d{1,2}月\d{1,2}[日号]|(?:\d{4}年)?\d{1,2}月|\d{4}年|今天|今日|本月|这个月|上个月|上月|最近30天|近30天)'
@@ -28,8 +29,6 @@ UNRESOLVED = re.compile(r'不|没|别|未|无|并非|而非|取消|放弃|或|�
 NON_NEGATING_WORD = re.compile(r'分别|类别|特别|区别|差别|性别|个别|识别|辨别')
 POLAR_QUESTION = re.compile(r'([\u4e00-\u9fff]{1,2})(?:不|没)\1')
 QUERY_WORD = re.compile(r'查|核对|分析|统计|看|读')
-NEGATED_WRITE = re.compile(r'(?:不要|不用|不必|不想|不需要|无需|别)(?:再|自动)?'
-                           r'(?:转账|付款|扣款|支付|办理)(?=[，,。；;！!？?\s]|$)')
 COMPLETE = re.compile(r'完整|整月|全年|整年')
 CONNECTOR = re.compile(r'\s*(?:到|至|—|~|～)\s*')
 
@@ -57,14 +56,12 @@ def period_is_affirmed(message, matches):
     negated write clause remains a write prohibition but does not cancel reads.
     All other negation/uncertainty stays unresolved; no chosen period is guessed.
     """
-    masked = list(message)
+    masked = list(mask_write_prohibitions(message))
     for match in NON_NEGATING_WORD.finditer(message):
         masked[match.start():match.end()] = ' ' * (match.end() - match.start())
     for match in POLAR_QUESTION.finditer(message):
         if match.start() >= matches[-1].end() and not QUERY_WORD.search(match[1]):
             masked[match.start():match.end()] = ' ' * (match.end() - match.start())
-    for match in NEGATED_WRITE.finditer(message):
-        masked[match.start():match.end()] = ' ' * (match.end() - match.start())
     return UNRESOLVED.search(''.join(masked)) is None
 
 
@@ -265,6 +262,8 @@ def bind_item(item, parent, context, rows):
     messages = {m['message_id']: m['text'] for m in context['messages']}
     resolutions, signatures = {}, set()
     for field, slot in item['slots'].items():
+        if field not in {'start_date', 'end_date', 'period_text'}:
+            continue
         source = slot['source']
         span = locate_source(field, source, messages[source['message_id']])
         if span is None or span['expression_kind'] == 'single' and not is_period(span['endpoints'][0]['text']):

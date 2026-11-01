@@ -107,7 +107,10 @@ def duplicates(report):
 def render(report, sections):
     renderers = {'overview': overview, 'comparison': comparison, 'descriptions': descriptions,
                  'description_comparison': description_comparison, 'ratios': ratios, 'duplicates': duplicates}
-    lines = ['本期账单：' + period(report) + '。']
+    scope = report.get('account_scope', {})
+    label = (f"{scope['account_name']}（{scope['account_id']}）" if scope.get('kind') == 'ACCOUNT'
+             else '全部已授权账户合计')
+    lines = [label + '｜本期账单：' + period(report) + '。']
     for name in sections:
         lines.extend(renderers[name](report))
     lines.append('统计仅覆盖已提供的银行流水，完整日期窗口不证明资料完整；期间净流入不是当前余额、可支配储蓄或未来每月存钱能力。本段账单查询不办理银行操作；同轮其他办理的状态见对应任务或银行操作。')

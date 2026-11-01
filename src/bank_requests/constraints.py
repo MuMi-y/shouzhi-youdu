@@ -84,6 +84,10 @@ def billing_constraints(item, components, checks):
         args, day, ref = snapshot['arguments'], snapshot['business_date'], snapshot['evidence_id']
         from .billing_dates import verify_report
         periods = verify_report(item, snapshot)
+        requested_account = item['slots'].get('source_account', {}).get('value')
+        require_equal(args.get('account_id'), requested_account, 'BILLING_ACCOUNT_DOES_NOT_MATCH_REQUEST')
+        if requested_account is not None:
+            mark(checks, 'source_account', 'REPORT_AUTHORIZED_ACCOUNT', [ref])
         for field, info in periods.items():
             require_equal({key: args.get(key) for key in info['observable_range']}, info['observable_range'],
                           'BILLING_PERIOD_DOES_NOT_MATCH_REQUEST')

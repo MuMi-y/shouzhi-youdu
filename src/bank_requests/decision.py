@@ -190,6 +190,8 @@ def validate(items, context, tool_records=()):
                     'canonical_value': day, 'rule': 'SOURCED_CALENDAR_DAY'}
         from .billing_dates import bind_item
         bind_item(resolved, parent, context, tool_records)
+        from .billing_accounts import validate_request as validate_billing_account
+        validate_billing_account(resolved, context, tool_records)
         if intent in CASHFLOW:
             bind_cashflow(resolved, parent, context, tool_records, cashflow_scopes[identifier],
                           supplied_fields=frozenset(item['slots']))
