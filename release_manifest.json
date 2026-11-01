@@ -1001,13 +1001,23 @@
     },
     {
       "path": "submission/02_答辩材料_收支有度.pptx",
-      "bytes": 84608,
-      "sha256": "bfffdd437bc94f5468d6d9128231fdf5fe37554e72d9fc8e1f7422a9af372c35"
+      "bytes": 132658,
+      "sha256": "66c84d3b7afc836ab8b026072852ea63c75ec3812bdc91dda9e79068f76397e2"
     },
     {
       "path": "submission/04_安全自评报告_收支有度.pdf",
       "bytes": 249214,
       "sha256": "a652e4c38e8dad8237df329689eb72f2b19cfae2609aab1eb9585686c477f2aa"
+    },
+    {
+      "path": "submission/algorithm-examples.json",
+      "bytes": 95197,
+      "sha256": "7fb654972d98ed1ac5a3a8a708ac82fc5881c7021bce856b962eb847d8e351bb"
+    },
+    {
+      "path": "submission/reproduce_algorithm_examples.py",
+      "bytes": 2884,
+      "sha256": "cc39a666cef89bfcf7ed68bc232bcdda5ede22bb629e80044d7e32bac916026d"
     },
     {
       "path": "submission/安全自评.md",
@@ -1021,8 +1031,13 @@
     },
     {
       "path": "submission/答辩讲稿.md",
-      "bytes": 6319,
-      "sha256": "a8239540ceaa130aca052764fdd59a733281d3d17086a09ed119eee2a045be1f"
+      "bytes": 13855,
+      "sha256": "ca424d2ecf3c795f8ff2fb6715835c70d509a779beba4a2f4a3cc5cdb660f953"
+    },
+    {
+      "path": "submission/算法图表说明.md",
+      "bytes": 5236,
+      "sha256": "2f3a2962f48211045a72b7e46df37fb4e0cb2aa3fb1b928f87c64c2c512cd8de"
     },
     {
       "path": "tests/competition_ai/check_conversation.mjs",
