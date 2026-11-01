@@ -2,7 +2,7 @@
   "project": "收支有度",
   "team": "从容计划",
   "date": "2026-11-01",
-  "scope": "公开材料更新；应用代码保持冻结版本",
+  "scope": "代码、部署与解释性文件；不含参赛交付材料",
   "files": [
     {
       "path": ".gitattributes",
@@ -11,8 +11,13 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 135,
-      "sha256": "fc2a456e9bb5b608af49cbfaae139b3c842a981da4ac099f76577c510a6d2864"
+      "bytes": 287,
+      "sha256": "077d8682221303f361040ae2956de4345ba0d6ed1f9982e4c7ebe67ab07e6a7e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3934,
+      "sha256": "dbdf82284cdb1da9edf83b5acf68efcf480c89fbef9f5e995239e46626090e32"
     },
     {
       "path": "config/model_route.json",
@@ -25,6 +30,11 @@
       "sha256": "49e11e167fd6ef5096a640cacc98b6aceaec0d7e0ebc0b759d6325ed1c421cad"
     },
     {
+      "path": "data/external/moneydata/SOURCE.md",
+      "bytes": 3019,
+      "sha256": "1e8d5ce0d7c1df594bb6b68b31c3489430611e44c331ae0351b9043d9ca66592"
+    },
+    {
       "path": "data/external/moneydata/date_comparison.json",
       "bytes": 1541,
       "sha256": "8668feaa889e6f685b29e01a1b851f6e3db8e19d43c61458c5a8d8d5f2077f5c"
@@ -33,11 +43,6 @@
       "path": "data/external/moneydata/laramee26openBankTransactionData.xlsx",
       "bytes": 507389,
       "sha256": "716eaf9ad4a3cf60dc9c9c8a20ed9a917c545a1b5f139f40ed91d2104faa3ff7"
-    },
-    {
-      "path": "data/external/moneydata/SOURCE.md",
-      "bytes": 3019,
-      "sha256": "1e8d5ce0d7c1df594bb6b68b31c3489430611e44c331ae0351b9043d9ca66592"
     },
     {
       "path": "data/synthetic/competition_v1/README.md",
@@ -66,8 +71,8 @@
     },
     {
       "path": "docs/COMPETITION_AI_STATUS.md",
-      "bytes": 2452,
-      "sha256": "212e018696d90a71f17c02a1e38a3e42725835940edb2cb6fb33296440048326"
+      "bytes": 2511,
+      "sha256": "7859b7af4152931cc7bf9383cb5758a87df93808e00b40044158a51c7c5573b5"
     },
     {
       "path": "docs/COMPETITION_RUNBOOK.md",
@@ -125,6 +130,11 @@
       "sha256": "cbf57f74df5ebf1ecd36c4f978236c612f843d8fea39c6258746fce4b3b4b016"
     },
     {
+      "path": "plugins/bank-v1/README.md",
+      "bytes": 2890,
+      "sha256": "ae04403129094c8ad085f47e39e5bcf6b477f5f2b74bbdfe3b93d4769405b83d"
+    },
+    {
       "path": "plugins/bank-v1/boot.cjs",
       "bytes": 2052,
       "sha256": "9ee5e1bb9a68a6539323f849a7d01a03c91dd3acfc2c2d1e0c33321eaab08c64"
@@ -145,19 +155,9 @@
       "sha256": "5b3b77bea3c69d424b33bbf640f5bd8acee160112d670ea4fc2439ffb4380423"
     },
     {
-      "path": "plugins/bank-v1/README.md",
-      "bytes": 2890,
-      "sha256": "ae04403129094c8ad085f47e39e5bcf6b477f5f2b74bbdfe3b93d4769405b83d"
-    },
-    {
       "path": "plugins/bank-v1/tools.cjs",
       "bytes": 2652,
       "sha256": "cb119a3596db18375a2f242f1fd4243a337fbc4c4162602d852802a8b5e6a5f1"
-    },
-    {
-      "path": "README.md",
-      "bytes": 3805,
-      "sha256": "27444d088d2b8683847192c49d2e43e8b48a0914f3a4fd14d0a68a68befaae95"
     },
     {
       "path": "requirements-competition.lock.txt",
@@ -995,51 +995,6 @@
       "sha256": "4f3709143f5c3bb38d287ab5a02e58513a48bd64494698724d97fea2c98fb626"
     },
     {
-      "path": "submission/01_技术文档_收支有度.pdf",
-      "bytes": 291123,
-      "sha256": "f4d0a479488e534b850dc966d28d72c4644bf491c365b1414e3fbc9cbef9219b"
-    },
-    {
-      "path": "submission/02_答辩材料_收支有度.pptx",
-      "bytes": 132658,
-      "sha256": "66c84d3b7afc836ab8b026072852ea63c75ec3812bdc91dda9e79068f76397e2"
-    },
-    {
-      "path": "submission/04_安全自评报告_收支有度.pdf",
-      "bytes": 249214,
-      "sha256": "a652e4c38e8dad8237df329689eb72f2b19cfae2609aab1eb9585686c477f2aa"
-    },
-    {
-      "path": "submission/algorithm-examples.json",
-      "bytes": 95197,
-      "sha256": "7fb654972d98ed1ac5a3a8a708ac82fc5881c7021bce856b962eb847d8e351bb"
-    },
-    {
-      "path": "submission/reproduce_algorithm_examples.py",
-      "bytes": 2884,
-      "sha256": "cc39a666cef89bfcf7ed68bc232bcdda5ede22bb629e80044d7e32bac916026d"
-    },
-    {
-      "path": "submission/安全自评.md",
-      "bytes": 4612,
-      "sha256": "5c701781180595ad3fef22bd7019ec27e9cdac2c1045cf3c27f99400a014a44a"
-    },
-    {
-      "path": "submission/技术说明.md",
-      "bytes": 6343,
-      "sha256": "6c561da126c3cf151dc0c9fa661c13f52f7ee8850dabc74fcf6f05bc83e4f546"
-    },
-    {
-      "path": "submission/答辩讲稿.md",
-      "bytes": 13855,
-      "sha256": "ca424d2ecf3c795f8ff2fb6715835c70d509a779beba4a2f4a3cc5cdb660f953"
-    },
-    {
-      "path": "submission/算法图表说明.md",
-      "bytes": 5236,
-      "sha256": "2f3a2962f48211045a72b7e46df37fb4e0cb2aa3fb1b928f87c64c2c512cd8de"
-    },
-    {
       "path": "tests/competition_ai/check_conversation.mjs",
       "bytes": 1986,
       "sha256": "9f174e3d9a3dd98636cff451f4be650f0a979c07f0ee8d68d72bb75e387fb807"
@@ -1605,24 +1560,9 @@
       "sha256": "33037c30ba67e413159ba504152e05dbbee0d39f4236b5182bc1895ea2b91105"
     },
     {
-      "path": "third_party/licenses/blinker-LICENSE.txt",
-      "bytes": 1054,
-      "sha256": "9eb73a1f38597a4aa17025d2ae1be3839624c795e985d4f0e9769ce29faca467"
-    },
-    {
-      "path": "third_party/licenses/click-LICENSE.txt",
-      "bytes": 1475,
-      "sha256": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d"
-    },
-    {
       "path": "third_party/licenses/Flask-LICENSE.txt",
       "bytes": 1475,
       "sha256": "489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea"
-    },
-    {
-      "path": "third_party/licenses/itsdangerous-LICENSE.txt",
-      "bytes": 1475,
-      "sha256": "63af09891b6be8ad1a4252ed43af0f4efba7fc948e228367bed7f3c5ae0b09d7"
     },
     {
       "path": "third_party/licenses/Jinja2-LICENSE.txt",
@@ -1635,14 +1575,29 @@
       "sha256": "4631ec0db5fd90a547e336817264c6798214338146f8ac94b4a57f96ee8c9ec4"
     },
     {
-      "path": "third_party/licenses/waitress-LICENSE.txt",
-      "bytes": 2070,
-      "sha256": "3e671db11df687516cc1db5b3d65e4aa383eaca3c20cea3faf53a0f7335d0a3c"
-    },
-    {
       "path": "third_party/licenses/Werkzeug-LICENSE.txt",
       "bytes": 1475,
       "sha256": "3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b"
+    },
+    {
+      "path": "third_party/licenses/blinker-LICENSE.txt",
+      "bytes": 1054,
+      "sha256": "9eb73a1f38597a4aa17025d2ae1be3839624c795e985d4f0e9769ce29faca467"
+    },
+    {
+      "path": "third_party/licenses/click-LICENSE.txt",
+      "bytes": 1475,
+      "sha256": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d"
+    },
+    {
+      "path": "third_party/licenses/itsdangerous-LICENSE.txt",
+      "bytes": 1475,
+      "sha256": "63af09891b6be8ad1a4252ed43af0f4efba7fc948e228367bed7f3c5ae0b09d7"
+    },
+    {
+      "path": "third_party/licenses/waitress-LICENSE.txt",
+      "bytes": 2070,
+      "sha256": "3e671db11df687516cc1db5b3d65e4aa383eaca3c20cea3faf53a0f7335d0a3c"
     },
     {
       "path": "third_party/r2/attrs/LICENSE",
@@ -1650,14 +1605,14 @@
       "sha256": "882115c95dfc2af1eeb6714f8ec6d5cbcabf667caff8729f42420da63f714e9f"
     },
     {
-      "path": "third_party/r2/jsonschema/COPYING",
-      "bytes": 1057,
-      "sha256": "4f92a015a13c4d1a040bef018aa13430b4f1bc73b41b16bb846c346766de7439"
-    },
-    {
       "path": "third_party/r2/jsonschema-specifications/COPYING",
       "bytes": 1057,
       "sha256": "42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c"
+    },
+    {
+      "path": "third_party/r2/jsonschema/COPYING",
+      "bytes": 1057,
+      "sha256": "4f92a015a13c4d1a040bef018aa13430b4f1bc73b41b16bb846c346766de7439"
     },
     {
       "path": "third_party/r2/referencing/COPYING",

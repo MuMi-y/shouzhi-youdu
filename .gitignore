@@ -11,3 +11,10 @@ __pycache__/
 *.pyc
 ai-sessions/
 *.log
+
+# Competition submissions stay local; repository contains source and explanatory docs.
+/submission/
+/deliverables/
+/presentations/
+*.pptx
+*.ppt

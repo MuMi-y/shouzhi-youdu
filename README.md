@@ -39,7 +39,7 @@ py -3.13 -m venv .venv-competition
 - `node-runtime`、`plugins`：锁定的DSH依赖声明及工具插件。
 - `tests`、`scripts`：测试、评测与部署入口。
 - `data`、`third_party`：合成数据、公开历史数据及第三方许可。
-- `submission`：技术说明、安全自评及新版答辩材料。
+- `docs`：部署、使用方式与能力范围说明。
 
 ## 测试与范围
 
@@ -56,4 +56,4 @@ py -3.13 -m venv .venv-competition
 
 MoneyData的来源与CC BY 4.0署名见[data/external/moneydata/SOURCE.md](data/external/moneydata/SOURCE.md)。其账户归属和币种不等同于本项目虚构人民币账户，不并入模拟资金。第三方许可保留在相应目录；项目自身未声明额外开源许可证，公开可读不等同于授予任意再许可权。
 
-本次发布更新参赛表达与部署资料，应用代码保持2026-11-01冻结版本。`release_manifest.json`记录当前分发文件哈希，便于核对文件完整性。
+本仓库仅维护项目代码、数据与依赖许可、部署和解释性文档。PPT、答辩讲稿、报名PDF及其他参赛材料在本地单独交付，不纳入仓库当前版本。应用代码保持2026-11-01冻结版本。`release_manifest.json`记录当前仓库文件哈希，便于核对文件完整性。
