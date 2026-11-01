@@ -1,0 +1,17 @@
+{
+  "rows": 6567,
+  "date_min": "2015-07-27",
+  "date_max": "2022-07-25",
+  "date_increases_in_source_descending_order": 0,
+  "balance_adjacent_pairs_checked": 6566,
+  "balance_mismatches": 0,
+  "balance_mismatch_examples": [],
+  "blank_categories": 24,
+  "blank_transaction_types": 61,
+  "missing_currency_rows": 6567,
+  "date_evidence": "All original row positions matched debit, credit and balance in author's pinned reference; no unexplained date difference",
+  "scope": "Research normalization and adjacent-balance check only; not agent evaluation or universal data-quality certification",
+  "source_sha256": "716eaf9ad4a3cf60dc9c9c8a20ed9a917c545a1b5f139f40ed91d2104faa3ff7",
+  "source_comparison_sha256": "8668feaa889e6f685b29e01a1b851f6e3db8e19d43c61458c5a8d8d5f2077f5c",
+  "csv_sha256": "2a1dce1d528a390e478b29ad2484191b18cdf7567a0f89c7f66e196bd5695987"
+}

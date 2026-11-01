@@ -1,0 +1,6 @@
+{
+  "provider": "volcengine-agent-plan",
+  "model": "deepseek-v4.1-flash",
+  "baseURL": "https://ark.cn-beijing.volces.com/api/plan/v3",
+  "apiKeyEnv": "ARK_AGENT_PLAN_API_KEY"
+}

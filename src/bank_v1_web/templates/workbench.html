@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>收支有度 · 银行智能体</title><link rel="stylesheet" href="/static/app.css"><link rel="stylesheet" href="/static/goals.css"><script type="module" src="/static/app.js"></script></head>
+<body class="workbench-page">
+<header class="topbar"><a class="brand" href="/" aria-label="收支有度首页"><span class="brand-icon" aria-hidden="true">度</span><span class="brand-wordmark"><strong>收支有度</strong><span class="brand-caption">让每一笔收支，照顾你想要的生活。</span></span></a><div class="header-meta"><span class="status-dot"></span> 本地体验版 <span class="separator">/</span> <span id="scope-note">虚构人民币银行</span></div></header>
+<main>
+<div class="page-title"><div><p class="eyebrow">YOUR MONEY, IN CONTEXT</p><h1>眼前的生活，未来的安排。</h1><p class="subtitle">看清这一笔，对接下来的生活有什么影响。</p></div><button id="open-simulator" class="secondary" data-bank>模拟一笔收支 <span aria-hidden="true">↗</span></button></div>
+<div id="error" role="alert" hidden></div>
+<section class="panel runtime-panel" aria-label="AI服务状态"><div class="panel-body"><strong id="runtime-title" role="status">正在读取运行状态…</strong><p id="runtime-summary" class="caption"></p><details><summary>查看版本、使用时段与最近结果</summary><p id="runtime-details" class="caption"></p><p id="runtime-last" class="caption"></p></details></div></section>
+<nav class="workspace-tabs" aria-label="资料范围"><button id="bank-tab" class="secondary" aria-pressed="true">模拟银行</button><button id="history-tab" class="secondary" aria-pressed="false">MoneyData 完整历史</button></nav>
+<section class="overview" aria-label="资金概览" data-bank>
+<div class="balance-block"><span class="label">当前实际余额</span><div id="total" class="money loading">—</div><div id="accounts" class="account-list"></div><p class="caption">只包含已入账流水，不含预计收入</p></div>
+<div class="forecast-block"><div class="section-line"><span class="label">未来 30 天的安排</span><span id="forecast-date" class="caption"></span></div><div id="forecast-value" class="forecast-number loading">正在读取账本…</div><div id="forecast-chart" aria-label="未来30天余额预测"></div><p id="conservative" class="caption"></p><p id="forecast-warning" class="warning" hidden></p><p class="caption">实线：含预计收入　虚线：预计收入未到账<br>仅计算已记录的安排；不代表所有生活开支。</p></div>
+<div class="watch-block"><div class="section-line"><span class="label">主动关注</span><span class="tag">服务运行期间</span></div><p>每次收支变化后，重新看看已有安排是否受影响。</p><label for="cadence" class="caption">定期检查</label><select id="cadence"><option value="daily">每天检查一次</option><option value="weekly">每周检查一次</option><option value="off">暂停定期检查</option></select><button id="due-check" class="text-button">现在检查 →</button><p class="caption">关机时停止检查，重新启动后补查。</p></div>
+</section>
+<section id="history-panel" class="panel history-panel" data-history hidden>
+<div class="panel-heading"><div><p class="eyebrow">完整记录 · 独立分析</p><h2>MoneyData 历史流水</h2><p id="history-range" class="caption">正在读取来源…</p></div><span class="tag">只读历史</span></div>
+<div class="panel-body"><p id="history-limits" class="warning"></p><p>金额使用原数据单位，未推定币种。入账不等于收入，出账不等于消费；来源可能包含转账。历史记录不计入上方模拟银行。</p><p id="history-error" role="alert" class="warning" hidden></p>
+<div class="operation-buttons"><button id="history-analyze" class="primary">让收支有度分析完整历史</button><button id="history-forecast" class="secondary">这些资料能预测未来吗？</button></div>
+<form id="history-filter" class="history-filter"><label>开始日期<input type="date" id="history-start"></label><label>结束日期<input type="date" id="history-end"></label><button id="history-apply" class="secondary">查看期间</button></form>
+<p id="history-totals" class="history-totals"></p><p id="history-equation" class="caption"></p><p class="caption">来源分类中出账最多的 8 类；完整统计供智能体查询。</p><div id="history-groups" class="history-groups"></div>
+<details><summary>查看来源、对账与限制</summary><pre id="history-provenance"></pre><p id="history-evidence" class="caption"></p></details>
+<div class="table-scroll"><table><thead><tr><th>日期</th><th>说明</th><th>来源分类</th><th>出账</th><th>入账</th><th>历史余额</th><th>依据</th></tr></thead><tbody id="history-rows"></tbody></table></div>
+<div class="history-pagination"><span id="history-page"></span><button id="history-prev" class="secondary">上一页</button><button id="history-next" class="secondary">下一页</button><button id="history-last" class="secondary">最后一页</button></div></div></section>
+<section id="goal-panel" class="panel goal-panel" data-bank hidden aria-labelledby="goal-title">
+<div class="panel-heading"><div><p class="eyebrow">让重要的事有安排</p><h2 id="goal-title">我的重点目标</h2></div><span class="tag">确定性计算 · 目标 AI 尚未接入</span></div>
+<div class="panel-body"><p id="goal-summary" aria-live="polite"></p>
+<details id="goal-editor"><summary>设定或修改目标</summary><p class="caption">一次性购置目标。其他已记录安排全部保留；这份偏好不授权转账或付款。</p>
+<form id="goal-form" class="goal-form">
+<label>目标名称<input id="goal-name" required maxlength="100" placeholder="例如：学习用电脑"></label>
+<label>为什么重要<input id="goal-reason" required maxlength="500" placeholder="由你定义这个目标的用途"></label>
+<label class="goal-wide">取舍原则<input id="goal-priority" required maxlength="500" placeholder="例如：优先保还款，能推迟购买"></label>
+<label>期望购置金额（元）<input id="goal-amount" inputmode="decimal" required placeholder="4500.00"></label>
+<label>可接受最低金额（元）<input id="goal-minimum" inputmode="decimal" required placeholder="3000.00"></label>
+<label>期望日期<input id="goal-date" type="date" required></label><label>最晚日期<input id="goal-latest" type="date" required></label>
+<label>至少保留余额（元）<input id="goal-reserve" inputmode="decimal" required placeholder="2000.00"></label>
+<div class="goal-wide operation-buttons"><button id="goal-save" class="primary" type="submit">核对并保存目标</button></div>
+</form></details><div class="operation-buttons"><button id="goal-compare" class="secondary">按当前账本比较方案</button></div>
+<p id="goal-basis" class="caption"></p><div id="goal-options" class="goal-options"></div><div id="goal-choice" aria-live="polite"></div>
+</div></section>
+<div class="workspace" id="workspace">
+<div class="main-column"><section class="conversation panel" aria-labelledby="chat-title"><div class="panel-heading"><div><p class="eyebrow">一起理清楚</p><h2 id="chat-title">和收支有度聊聊</h2></div><span id="agent-status" class="tag">连接中</span></div>
+<div id="conversation" class="messages" aria-live="polite"><article class="welcome"><span class="assistant-mark">度</span><div><h3>不用从一张空白表格开始。</h3><p id="welcome-text">我可以结合你的账本和已记录安排，看看钱什么时候要用、计划能不能往前走。需要改安排或操作账户时，我会先把明细交给你确认。</p></div></article></div>
+<div class="suggestions" data-bank><button data-prompt="帮我结合最近的收支、当前余额和未来30天的安排，看看接下来要注意什么。">先看一眼整体情况</button><button data-prompt="如果今天再花3500元，会影响哪些已有安排？请调用工具计算，先不要真的花钱。">再花 3,500 元会怎样？</button><button data-prompt="帮我准备查询现有的自动扣款授权，等我在页面上确认。">看看自动扣款</button></div>
+<form id="chat-form" class="composer"><label class="sr-only" for="prompt">你的需求</label><textarea id="prompt" rows="2" maxlength="6000" placeholder="例如：把电脑购买计划推迟一周，再帮我算算。" required></textarea><div class="composer-bottom"><span>分析基于工具读取的账本与已确认安排</span><button class="primary" id="send" type="submit">发送 <span aria-hidden="true">↑</span></button></div></form></section>
+<section class="panel competition-panel" data-bank data-competition hidden><div class="panel-heading"><div><p class="eyebrow">每一步都看得见</p><h2>正在办理的任务</h2></div><span class="tag">可暂停 · 可接管 · 可恢复</span></div><div id="task-list" class="panel-body"></div></section></div>
+<aside class="sidebar" data-bank><section class="panel"><div class="panel-heading"><h2>需要你确认</h2><span id="pending-count" class="count">0</span></div><div id="operations" class="panel-body"><p class="empty">暂时没有待确认操作。</p></div></section>
+<section class="panel"><div class="panel-heading"><h2>核对到账与安排</h2><span id="match-count" class="count">0</span></div><div id="matches" class="panel-body"></div></section>
+<section class="panel"><div class="panel-heading"><h2>已记住的安排</h2><span class="caption">跨重启保存</span></div><div id="arrangements" class="panel-body"></div></section>
+<section class="panel"><div class="panel-heading"><h2>主动检查记录</h2><span id="event-count" class="caption"></span></div><div id="events" class="panel-body"></div></section></aside>
+</div>
+
+<section class="panel competition-panel" data-bank data-competition hidden><div class="panel-heading"><div><p class="eyebrow">先核对，再关注</p><h2>持续关注</h2></div><span class="tag">来自已授权流水</span></div><div class="panel-body"><div id="insight-notices"></div><div id="insight-candidates" class="insight-grid"></div></div></section>
+<section class="panel competition-panel" data-bank data-competition hidden><div class="panel-heading"><h2 id="security-state">验证状态</h2><button id="security-unlock-open" class="secondary" hidden>独立验证解除锁定</button></div><div class="panel-body"><p id="security-description"></p></div></section>
+<section class="panel ledger" data-bank><div class="panel-heading"><div><p class="eyebrow">有据可查</p><h2>最近流水与操作回执</h2></div><span id="business-date" class="caption"></span></div><div class="ledger-grid"><div class="table-scroll"><table><thead><tr><th>日期 / 说明</th><th>账户</th><th class="amount-cell">金额</th></tr></thead><tbody id="transactions"></tbody></table></div><div id="receipts" class="receipt-list"></div></div></section>
+<footer><b id="edition">收支有度 · 银行智能体 V2</b> <span>本地单用户场景 · DSH 驱动 · 不连接真实银行</span></footer>
+</main>
+<dialog id="simulator"><form id="event-form"><div class="dialog-heading"><div><p class="eyebrow">虚构银行事件</p><h2>让账本发生一点变化</h2></div><button type="button" class="icon-button" id="close-simulator" aria-label="关闭">×</button></div><p class="subtitle">在这个虚构账户中记入一笔收支，观察智能体如何主动重新分析。不会产生真实交易。</p><label for="event-kind">事件类型</label><select id="event-kind"><option value="expense">消费支出</option><option value="income">收入到账</option><option value="refund">原消费退款</option></select><label for="event-amount">金额（元）</label><input id="event-amount" inputmode="decimal" placeholder="例如 3500.00" required pattern="[0-9]+(\.[0-9]{1,2})?" maxlength="12"><label for="event-description">说明</label><input id="event-description" maxlength="160" placeholder="例如：购买设备"><div id="refund-field" hidden><label for="original-transaction">原消费</label><select id="original-transaction"></select></div><p class="caption">使用日常账户 A。成功记账后自动排队分析，余额先更新。</p><button class="primary full" type="submit" id="submit-event">记入模拟银行</button></form></dialog>
+<dialog id="confirm-dialog"><div class="dialog-heading"><h2>核对操作明细</h2><button type="button" class="icon-button" id="close-confirm" aria-label="关闭">×</button></div><div id="confirm-details"></div><div id="challenge-field" hidden><p class="warning">本地模拟强验证，不是真实银行认证。</p><button id="get-challenge" class="secondary">获取模拟验证码</button><p id="challenge-text" class="caption"></p><label for="challenge-answer">填写模拟验证码</label><input id="challenge-answer" autocomplete="off"></div><div id="independent-field" hidden><p class="warning">使用独立口令和认证器验证码。请勿把凭据发送到聊天中。</p><label for="verify-password">独立口令</label><input id="verify-password" type="password" autocomplete="current-password"><label for="verify-otp">认证器 6 位验证码</label><input id="verify-otp" inputmode="numeric" maxlength="6" autocomplete="one-time-code"></div><p class="caption">只确认这一份明细。关闭此窗口不会执行操作。</p><button id="confirm-submit" class="primary full">确认执行</button></dialog>
+<dialog id="candidate-dialog"><form id="candidate-form"><div class="dialog-heading"><h2>更正关注项</h2><button id="candidate-close" type="button" class="icon-button" aria-label="关闭">×</button></div><input id="candidate-id" type="hidden"><input id="candidate-version" type="hidden"><label for="candidate-label">名称</label><input id="candidate-label" maxlength="200" required><label for="candidate-amount">预计金额（元）</label><input id="candidate-amount" inputmode="decimal" required><label for="candidate-date">预计日期</label><input id="candidate-date" type="date" required><p class="caption">仅更正关注偏好，不变更银行授权或商户合同。</p><button id="candidate-save" type="submit" class="primary full">保存并关注</button></form></dialog>
+<dialog id="unlock-dialog"><form id="unlock-form"><div class="dialog-heading"><h2>解除操作锁定</h2><button id="unlock-close" type="button" class="icon-button" aria-label="关闭">×</button></div><label for="unlock-password">独立口令</label><input id="unlock-password" type="password" autocomplete="current-password" required><label for="unlock-otp">认证器验证码</label><input id="unlock-otp" inputmode="numeric" maxlength="6" autocomplete="one-time-code" required><button id="unlock-submit" class="primary full" type="submit">验证并解除</button></form></dialog>
+</body></html>

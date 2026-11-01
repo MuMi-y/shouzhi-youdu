@@ -1,0 +1,26 @@
+.goal-panel { margin:24px 0; }
+.goal-form { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr)); gap:16px; margin:20px 0; }
+.goal-form label { display:grid; gap:6px; }
+.goal-form input { width:100%; min-height:44px; }
+.goal-wide { grid-column:1 / -1; }
+.goal-options { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr)); gap:18px; margin:18px 0; }
+.goal-option { border:1px solid var(--line); padding:20px; border-radius:var(--radius); min-width:0; }
+.goal-option h3 { margin-top:0; }
+.goal-price { font-size:26px; font-weight:600; margin:8px 0; }
+.goal-panel .operation-buttons { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0; }
+.goal-panel button { min-height:44px; }
+.goal-panel input:focus-visible { outline:3px solid #6c997d; outline-offset:2px; }
+.goal-option pre { max-height:250px; overflow:auto; font-size:12px; }
+.goal-followup { border-left:3px solid var(--green); background:var(--pale); padding:16px 20px; }
+.goal-panel summary { cursor:pointer; padding:10px 0; }
+.goal-panel p { overflow-wrap:anywhere; }
+.goal-explanation { white-space:pre-line; line-height:1.7; }
+.goal-disclosure { border-top:1px solid var(--line); margin-top:16px; padding-top:4px; }
+.goal-disclosure summary { min-height:44px; font-weight:600; }
+.goal-disclosure summary:hover { color:var(--green); }
+.goal-disclosure summary:focus-visible { outline:3px solid #6c997d; outline-offset:2px; }
+.goal-followup h4 { margin:20px 0 8px; }
+
+/* Goal comparisons share the same calm surfaces as the conversation. */
+.goal-panel .panel-heading{flex-wrap:wrap}.goal-panel .tag{white-space:normal}.goal-option{background:#fffffc;border-color:#cfdcc9}.goal-option h3{font-size:17px}.goal-price{font-family:Georgia,serif;color:var(--green);font-size:30px}.goal-followup{border-left:3px solid var(--green);border-radius:0 14px 14px 0;background:#edf3e8;padding:20px}.goal-explanation{line-height:1.85;font-size:15px}.goal-form label{margin:0;line-height:1.7;font-size:14px}.goal-form input{font-size:16px;background:#fff}.goal-form{gap:20px 18px}.goal-panel summary{min-height:44px}.goal-panel pre{overflow-wrap:anywhere;white-space:pre-wrap}.goal-followup p{font-size:14px;line-height:1.85}
+@media(max-width:600px){.goal-options{grid-template-columns:minmax(0,1fr)}.goal-form{grid-template-columns:minmax(0,1fr);gap:16px}.goal-option{padding:16px}.goal-followup{padding:16px}.goal-panel .operation-buttons button{max-width:100%}.goal-price{font-size:28px}}

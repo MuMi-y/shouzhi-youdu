@@ -1,0 +1,47 @@
+{
+  "workbook_rows": 6567,
+  "reference_rows": 6567,
+  "aligned_amount_balance_rows": 6567,
+  "matching_description_rows": 6358,
+  "direct_date_matches": 3946,
+  "matches_after_swapping_serial_day_month": 2621,
+  "unexplained_date_differences": 0,
+  "difference_examples": [
+    {
+      "source_transaction_number": "44",
+      "row_position": 44,
+      "stored_decoded_date": "2022-12-07",
+      "reference_date": "2022-07-12"
+    },
+    {
+      "source_transaction_number": "45",
+      "row_position": 45,
+      "stored_decoded_date": "2022-12-07",
+      "reference_date": "2022-07-12"
+    },
+    {
+      "source_transaction_number": "46",
+      "row_position": 46,
+      "stored_decoded_date": "2022-12-07",
+      "reference_date": "2022-07-12"
+    },
+    {
+      "source_transaction_number": "47",
+      "row_position": 47,
+      "stored_decoded_date": "2022-12-07",
+      "reference_date": "2022-07-12"
+    },
+    {
+      "source_transaction_number": "48",
+      "row_position": 48,
+      "stored_decoded_date": "2022-11-07",
+      "reference_date": "2022-07-11"
+    }
+  ],
+  "reference_date_min": "2015-07-27",
+  "reference_date_max": "2022-07-25",
+  "source_not_modified": true,
+  "reference_url": "https://raw.githubusercontent.com/thevisgroup/MoneyVis/0531fe49cd704f92ad1aaff2e0160fa100262ed9/data/data.csv",
+  "reference_sha256": "6a97cf4889b86808775f693ad8cf07d82561c461cb8fcfdbbd071b38599945a0",
+  "source_sha256": "716eaf9ad4a3cf60dc9c9c8a20ed9a917c545a1b5f139f40ed91d2104faa3ff7"
+}

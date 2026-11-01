@@ -1,0 +1,1060 @@
+{
+  "source_sha256": "2e543bf8c9c1c33b9985284c798b91070dbf9b8fe3385987860c0f314178fb15",
+  "question": "请汇总2026年1月1日到今天的账单，说明统计覆盖和收入出账结构。",
+  "result": {
+    "ok": true,
+    "text": "以下为 2026-01-01 至 2026-10-12 的账单汇总（金额单位：元，保留两位）。\n\n**统计覆盖**\n- 本期为任意日期窗口：2026-01-01 至 2026-10-12（含首尾共 285 天），不是完整自然月，不能按月外推。\n- 覆盖状态为“未确立完整”：账单仅覆盖已绑定资料，不保证该期间流水资料齐全；共纳入 17 笔。\n- 工具同时给出了前一等长期间（2025-03-22 至 2025-12-31，共 285 天）作比较：该期间未观察到任何流水，因此各项变化无法计算百分比，只能说本期有记录、前期未观察到。\n\n**总体收支**\n- 流入合计 27000.00：收入 24000.00，期初余额 3000.00；退款 0.00，内部转账净额 0.00。\n- 出账合计 21155.00，全部为消费支出。\n- 净流入 5845.00（含期初等因素，是该窗口已纳入流水的净变化，不等于可支配储蓄或当前余额）。\n\n**收入结构**（按原描述分组，共 6 组、未截断；描述不等于商户身份）\n- 虚构工资到账：3 笔，+24000.00（全部收入）\n- 期初余额：2 笔，+3000.00（非收入）\n\n**出账结构**\n- 虚构住房与生活支出：3 笔，15000.00\n- 虚构餐饮交通与日常支出：3 笔，6000.00\n- 虚构云存储代扣：3 笔，90.00\n- 虚构视频会员：3 笔，65.00\n- 出账合计 21155.00，与上方消费总额一致。\n\n**两个独立比例（按工具口径）**\n- 本期消费支出占收入约 88%（88.15%）。\n- 本期净流入占收入约 24%（24.35%），含期初等全部口径流量，不是储蓄率。\n\n本期无异常候选，类别上涨规则因前期出账为零未触发显著上涨判断；这不代表消费合理与否的认定。如需看某笔明细或按商户进一步拆分，可以告诉我。",
+    "trace": [
+      {
+        "at": "2026-10-19T05:17:14.354Z",
+        "kind": "registered",
+        "allowed": [
+          "accounts",
+          "arrangements",
+          "billing_report",
+          "check_insights",
+          "event_context",
+          "forecast",
+          "insight_status",
+          "match_mandate_from_query",
+          "money_calculate",
+          "operation",
+          "prepare_mandate_cancel",
+          "prepare_mandate_query",
+          "prepare_transfer",
+          "propose_arrangement",
+          "recurring_candidates",
+          "replan_task",
+          "spending_summary",
+          "submit_task_plan",
+          "task_status",
+          "transactions"
+        ]
+      },
+      {
+        "kind": "surface",
+        "tools": [
+          "accounts",
+          "arrangements",
+          "billing_report",
+          "check_insights",
+          "event_context",
+          "forecast",
+          "insight_status",
+          "match_mandate_from_query",
+          "money_calculate",
+          "operation",
+          "prepare_mandate_cancel",
+          "prepare_mandate_query",
+          "prepare_transfer",
+          "propose_arrangement",
+          "recurring_candidates",
+          "replan_task",
+          "spending_summary",
+          "submit_task_plan",
+          "task_status",
+          "transactions"
+        ],
+        "preset": "bank-v1",
+        "provider": "ark-coding-kimi3",
+        "model": "kimi-k3"
+      },
+      {
+        "at": "2026-10-19T05:17:26.200Z",
+        "kind": "guard",
+        "name": "billing_report",
+        "denied": false
+      },
+      {
+        "at": "2026-10-19T05:17:26.222Z",
+        "kind": "request",
+        "name": "billing_report",
+        "call_id": "billing_report_0_8d1acf54",
+        "arguments": {
+          "end_date": "2026-10-12",
+          "start_date": "2026-01-01"
+        }
+      },
+      {
+        "at": "2026-10-19T05:17:26.243Z",
+        "kind": "response",
+        "name": "billing_report",
+        "tool": "billing_report",
+        "args": {
+          "end_date": "2026-10-12",
+          "start_date": "2026-01-01"
+        },
+        "ok": true,
+        "call_id": "billing_report_0_8d1acf54",
+        "status": 200,
+        "response": {
+          "as_of": "2026-10-12",
+          "currency": "CNY",
+          "data": {
+            "analysis_policy": {
+              "category_increase": {
+                "minimum_absolute_increase_minor": 10000,
+                "minimum_increase_percent": 20,
+                "previous_debit_must_be_positive": true
+              },
+              "recurring_price_increase": {
+                "minimum_increase_percent": 10,
+                "previous_observations_must_be_fixed": true
+              }
+            },
+            "policy_config": {
+              "revision": 1,
+              "schema_version": 1,
+              "sha256": "cdce40546fe3ddf926b8b3800089b155f56ae76a9cf5e6e117781535d68e66ec"
+            },
+            "report": {
+              "analysis_policy": {
+                "category_increase": {
+                  "minimum_absolute_increase_minor": 10000,
+                  "minimum_increase_percent": 20,
+                  "previous_debit_must_be_positive": true
+                },
+                "recurring_price_increase": {
+                  "minimum_increase_percent": 10,
+                  "previous_observations_must_be_fixed": true
+                }
+              },
+              "anomaly_candidates": [],
+              "category_changes": [
+                {
+                  "category": "OPENING",
+                  "change": "0.00",
+                  "change_minor": 0,
+                  "current_debit_minor": 0,
+                  "evidence_refs": [
+                    "fixture_tx_00",
+                    "fixture_tx_01"
+                  ],
+                  "previous_debit_minor": 0,
+                  "rule": "仅针对该类别汇总出账；上期出账非零且增幅至少20%、绝对增加至少100.00源单位；不是用户预算或欺诈判断。",
+                  "significant_increase_candidate": false
+                },
+                {
+                  "category": "expense",
+                  "change": "21155.00",
+                  "change_minor": 2115500,
+                  "current_debit_minor": 2115500,
+                  "evidence_refs": [
+                    "competition_video_3",
+                    "competition_cloud_0",
+                    "fixture_tx_03",
+                    "fixture_tx_04",
+                    "competition_video_4",
+                    "competition_cloud_1",
+                    "fixture_tx_06",
+                    "fixture_tx_07",
+                    "competition_video_5",
+                    "competition_cloud_2",
+                    "fixture_tx_09",
+                    "fixture_tx_10"
+                  ],
+                  "previous_debit_minor": 0,
+                  "rule": "仅针对该类别汇总出账；上期出账非零且增幅至少20%、绝对增加至少100.00源单位；不是用户预算或欺诈判断。",
+                  "significant_increase_candidate": false
+                },
+                {
+                  "category": "income",
+                  "change": "0.00",
+                  "change_minor": 0,
+                  "current_debit_minor": 0,
+                  "evidence_refs": [
+                    "fixture_tx_02",
+                    "fixture_tx_05",
+                    "fixture_tx_08"
+                  ],
+                  "previous_debit_minor": 0,
+                  "rule": "仅针对该类别汇总出账；上期出账非零且增幅至少20%、绝对增加至少100.00源单位；不是用户预算或欺诈判断。",
+                  "significant_increase_candidate": false
+                }
+              ],
+              "changes": [
+                {
+                  "boundary": "上期为零时不计算百分比；等长期间比较，不自动称同比或环比。",
+                  "change": "21155.00",
+                  "change_minor": 2115500,
+                  "change_percent": null,
+                  "current_minor": 2115500,
+                  "metric": "expense_minor",
+                  "previous_minor": 0
+                },
+                {
+                  "boundary": "上期为零时不计算百分比；等长期间比较，不自动称同比或环比。",
+                  "change": "0.00",
+                  "change_minor": 0,
+                  "change_percent": null,
+                  "current_minor": 0,
+                  "metric": "refund_minor",
+                  "previous_minor": 0
+                },
+                {
+                  "boundary": "上期为零时不计算百分比；等长期间比较，不自动称同比或环比。",
+                  "change": "21155.00",
+                  "change_minor": 2115500,
+                  "change_percent": null,
+                  "current_minor": 2115500,
+                  "metric": "debit_minor",
+                  "previous_minor": 0
+                },
+                {
+                  "boundary": "上期为零时不计算百分比；等长期间比较，不自动称同比或环比。",
+                  "change": "27000.00",
+                  "change_minor": 2700000,
+                  "change_percent": null,
+                  "current_minor": 2700000,
+                  "metric": "credit_minor",
+                  "previous_minor": 0
+                },
+                {
+                  "boundary": "上期为零时不计算百分比；等长期间比较，不自动称同比或环比。",
+                  "change": "24000.00",
+                  "change_minor": 2400000,
+                  "change_percent": null,
+                  "current_minor": 2400000,
+                  "metric": "income_minor",
+                  "previous_minor": 0
+                },
+                {
+                  "boundary": "上期为零时不计算百分比；等长期间比较，不自动称同比或环比。",
+                  "change": "5845.00",
+                  "change_minor": 584500,
+                  "change_percent": null,
+                  "current_minor": 584500,
+                  "metric": "net_change_minor",
+                  "previous_minor": 0
+                }
+              ],
+              "comparison_status": "COMPLETED",
+              "comparison_window": {
+                "boundary": "INCLUSIVE",
+                "data_status": "QUERIED",
+                "day_count": 285,
+                "end_date": "2025-12-31",
+                "relation": "PREVIOUS_EQUAL_LENGTH",
+                "start_date": "2025-03-22"
+              },
+              "currency": "CNY",
+              "description_comparison": {
+                "all_evidence_refs_paths": {
+                  "current": "totals.evidence_refs",
+                  "previous": "previous_period.totals.evidence_refs"
+                },
+                "changed_group_count": 6,
+                "contract_version": 1,
+                "coverage_status": "NOT_ESTABLISHED",
+                "currency": "CNY",
+                "current_period": {
+                  "end_date": "2026-10-12",
+                  "start_date": "2026-01-01"
+                },
+                "evidence_ref_limit_per_period": 50,
+                "formula": "current - previous",
+                "group_by": [
+                  "description",
+                  "transaction_kind"
+                ],
+                "items": [
+                  {
+                    "change": {
+                      "credit_minor": 2400000,
+                      "debit_minor": 0,
+                      "net_change_minor": 2400000,
+                      "transaction_count": 3
+                    },
+                    "changed": true,
+                    "credit_change_rate": {
+                      "change_percent": null,
+                      "status": "NON_POSITIVE_BASE"
+                    },
+                    "current": {
+                      "credit_minor": 2400000,
+                      "debit_minor": 0,
+                      "net_change_minor": 2400000,
+                      "observed_in_period": true,
+                      "transaction_count": 3
+                    },
+                    "debit_change_rate": {
+                      "change_percent": null,
+                      "status": "NON_POSITIVE_BASE"
+                    },
+                    "description": "虚构工资到账",
+                    "evidence": {
+                      "current": {
+                        "refs": [
+                          "fixture_tx_02",
+                          "fixture_tx_05",
+                          "fixture_tx_08"
+                        ],
+                        "total": 3,
+                        "truncated": false
+                      },
+                      "previous": {
+                        "refs": [],
+                        "total": 0,
+                        "truncated": false
+                      }
+                    },
+                    "previous": {
+                      "credit_minor": 0,
+                      "debit_minor": 0,
+                      "net_change_minor": 0,
+                      "observed_in_period": false,
+                      "transaction_count": 0
+                    },
+                    "transaction_kind": "income"
+                  },
+                  {
+                    "change": {
+                      "credit_minor": 0,
+                      "debit_minor": 1500000,
+                      "net_change_minor": -1500000,
+                      "transaction_count": 3
+                    },
+                    "changed": true,
+                    "credit_change_rate": {
+                      "change_percent": null,
+                      "status": "NON_POSITIVE_BASE"
+                    },
+                    "current": {
+                      "credit_minor": 0,
+                      "debit_minor": 1500000,
+                      "net_change_minor": -1500000,
+                      "observed_in_period": true,
+                      "transaction_count": 3
+                    },
+                    "debit_change_rate": {
+                      "change_percent": null,
+                      "status": "NON_POSITIVE_BASE"
+                    },
+                    "description": "虚构住房与生活支出",
+                    "evidence": {
+                      "current": {
+                        "refs": [
+                          "fixture_tx_03",
+                          "fixture_tx_06",
+                          "fixture_tx_09"
+                        ],
+                        "total": 3,
+                        "truncated": false
+                      },
+                      "previous": {
+                        "refs": [],
+                        "total": 0,
+                        "truncated": false
+                      }
+                    },
+                    "previous": {
+                      "credit_minor": 0,
+                      "debit_minor": 0,
+                      "net_change_minor": 0,
+                      "observed_in_period": false,
+                      "transaction_count": 0
+                    },
+                    "transaction_kind": "expense"
+                  },
+                  {
+                    "change": {
+                      "credit_minor": 0,
+                      "debit_minor": 600000,
+                      "net_change_minor": -600000,
+                      "transaction_count": 3
+                    },
+                    "changed": true,
+                    "credit_change_rate": {
+                      "change_percent": null,
+                      "status": "NON_POSITIVE_BASE"
+                    },
+                    "current": {
+                      "credit_minor": 0,
+                      "debit_minor": 600000,
+                      "net_change_minor": -600000,
+                      "observed_in_period": true,
+                      "transaction_count": 3
+                    },
+                    "debit_change_rate": {
+                      "change_percent": null,
+                      "status": "NON_POSITIVE_BASE"
+                    },
+                    "description": "虚构餐饮交通与日常支出",
+                    "evidence": {
+                      "current": {
+                        "refs": [
+                          "fixture_tx_04",
+                          "fixture_tx_07",
+                          "fixture_tx_10"
+                        ],
+                        "total": 3,
+                        "truncated": false
+                      },
+                      "previous": {
+                        "refs": [],
+                        "total": 0,
+                        "truncated": false
+                      }
+                    },
+                    "previous": {
+                      "credit_minor": 0,
+                      "debit_minor": 0,
+                      "net_change_minor": 0,
+                      "observed_in_period": false,
+                      "transaction_count": 0
+                    },
+                    "transaction_kind": "expense"
+                  },
+                  {
+                    "change": {
+                      "credit_minor": 300000,
+                      "debit_minor": 0,
+                      "net_change_minor": 300000,
+                      "transaction_count": 2
+                    },
+                    "changed": true,
+                    "credit_change_rate": {
+                      "change_percent": null,
+                      "status": "NON_POSITIVE_BASE"
+                    },
+                    "current": {
+                      "credit_minor": 300000,
+                      "debit_minor": 0,
+                      "net_change_minor": 300000,
+                      "observed_in_period": true,
+                      "transaction_count": 2
+                    },
+                    "debit_change_rate": {
+                      "change_percent": null,
+                      "status": "NON_POSITIVE_BASE"
+                    },
+                    "description": "期初余额",
+                    "evidence": {
+                      "current": {
+                        "refs": [
+                          "fixture_tx_00",
+                          "fixture_tx_01"
+                        ],
+                        "total": 2,
+                        "truncated": false
+                      },
+                      "previous": {
+                        "refs": [],
+                        "total": 0,
+                        "truncated": false
+                      }
+                    },
+                    "previous": {
+                      "credit_minor": 0,
+                      "debit_minor": 0,
+                      "net_change_minor": 0,
+                      "observed_in_period": false,
+                      "transaction_count": 0
+                    },
+                    "transaction_kind": "OPENING"
+                  },
+                  {
+                    "change": {
+                      "credit_minor": 0,
+                      "debit_minor": 9000,
+                      "net_change_minor": -9000,
+                      "transaction_count": 3
+                    },
+                    "changed": true,
+                    "credit_change_rate": {
+                      "change_percent": null,
+                      "status": "NON_POSITIVE_BASE"
+                    },
+                    "current": {
+                      "credit_minor": 0,
+                      "debit_minor": 9000,
+                      "net_change_minor": -9000,
+                      "observed_in_period": true,
+                      "transaction_count": 3
+                    },
+                    "debit_change_rate": {
+                      "change_percent": null,
+                      "status": "NON_POSITIVE_BASE"
+                    },
+                    "description": "虚构云存储代扣",
+                    "evidence": {
+                      "current": {
+                        "refs": [
+                          "competition_cloud_0",
+                          "competition_cloud_1",
+                          "competition_cloud_2"
+                        ],
+                        "total": 3,
+                        "truncated": false
+                      },
+                      "previous": {
+                        "refs": [],
+                        "total": 0,
+                        "truncated": false
+                      }
+                    },
+                    "previous": {
+                      "credit_minor": 0,
+                      "debit_minor": 0,
+                      "net_change_minor": 0,
+                      "observed_in_period": false,
+                      "transaction_count": 0
+                    },
+                    "transaction_kind": "expense"
+                  },
+                  {
+                    "change": {
+                      "credit_minor": 0,
+                      "debit_minor": 6500,
+                      "net_change_minor": -6500,
+                      "transaction_count": 3
+                    },
+                    "changed": true,
+                    "credit_change_rate": {
+                      "change_percent": null,
+                      "status": "NON_POSITIVE_BASE"
+                    },
+                    "current": {
+                      "credit_minor": 0,
+                      "debit_minor": 6500,
+                      "net_change_minor": -6500,
+                      "observed_in_period": true,
+                      "transaction_count": 3
+                    },
+                    "debit_change_rate": {
+                      "change_percent": null,
+                      "status": "NON_POSITIVE_BASE"
+                    },
+                    "description": "虚构视频会员",
+                    "evidence": {
+                      "current": {
+                        "refs": [
+                          "competition_video_3",
+                          "competition_video_4",
+                          "competition_video_5"
+                        ],
+                        "total": 3,
+                        "truncated": false
+                      },
+                      "previous": {
+                        "refs": [],
+                        "total": 0,
+                        "truncated": false
+                      }
+                    },
+                    "previous": {
+                      "credit_minor": 0,
+                      "debit_minor": 0,
+                      "net_change_minor": 0,
+                      "observed_in_period": false,
+                      "transaction_count": 0
+                    },
+                    "transaction_kind": "expense"
+                  }
+                ],
+                "kind_summary": [
+                  {
+                    "changed_group_count": 1,
+                    "omitted_changed_group_count": 0,
+                    "omitted_groups": 0,
+                    "total_groups": 1,
+                    "transaction_kind": "OPENING"
+                  },
+                  {
+                    "changed_group_count": 4,
+                    "omitted_changed_group_count": 0,
+                    "omitted_groups": 0,
+                    "total_groups": 4,
+                    "transaction_kind": "expense"
+                  },
+                  {
+                    "changed_group_count": 1,
+                    "omitted_changed_group_count": 0,
+                    "omitted_groups": 0,
+                    "total_groups": 1,
+                    "transaction_kind": "income"
+                  }
+                ],
+                "limit": 20,
+                "metric_definitions": {
+                  "credit_change_rate": {
+                    "denominator_path": "previous.credit_minor",
+                    "formula": "(current - previous) / previous * 100",
+                    "numerator_path": "change.credit_minor",
+                    "rounding": "ROUND_HALF_EVEN_2DP",
+                    "unit": "percent"
+                  },
+                  "debit_change_rate": {
+                    "denominator_path": "previous.debit_minor",
+                    "formula": "(current - previous) / previous * 100",
+                    "numerator_path": "change.debit_minor",
+                    "rounding": "ROUND_HALF_EVEN_2DP",
+                    "unit": "percent"
+                  },
+                  "path_base": "description_comparison.items[*]",
+                  "scope": "EACH_ITEM"
+                },
+                "omitted": {
+                  "change": {
+                    "credit_minor": 0,
+                    "debit_minor": 0,
+                    "net_change_minor": 0,
+                    "transaction_count": 0
+                  },
+                  "changed_group_count": 0,
+                  "current": {
+                    "credit_minor": 0,
+                    "debit_minor": 0,
+                    "net_change_minor": 0,
+                    "transaction_count": 0
+                  },
+                  "group_count": 0,
+                  "previous": {
+                    "credit_minor": 0,
+                    "debit_minor": 0,
+                    "net_change_minor": 0,
+                    "transaction_count": 0
+                  }
+                },
+                "previous_period": {
+                  "end_date": "2025-12-31",
+                  "start_date": "2025-03-22"
+                },
+                "returned_groups": 6,
+                "semantics": "RAW_DESCRIPTION_NOT_MERCHANT_OR_INDUSTRY",
+                "sort": "ABS_FLOW_CHANGE_DESC_GROSS_FLOW_DESC_DESCRIPTION_KIND_ASC",
+                "status": "COMPLETED",
+                "total_groups": 6,
+                "truncated": false,
+                "unit": "minor_unit"
+              },
+              "description_groups": {
+                "all_evidence_refs_path": "totals.evidence_refs",
+                "evidence_ref_limit": 50,
+                "group_by": [
+                  "description",
+                  "transaction_kind"
+                ],
+                "items": [
+                  {
+                    "credit_minor": 2400000,
+                    "debit_minor": 0,
+                    "description": "虚构工资到账",
+                    "evidence_ref_count": 3,
+                    "evidence_refs": [
+                      "fixture_tx_02",
+                      "fixture_tx_05",
+                      "fixture_tx_08"
+                    ],
+                    "evidence_refs_truncated": false,
+                    "net_change_minor": 2400000,
+                    "transaction_count": 3,
+                    "transaction_kind": "income"
+                  },
+                  {
+                    "credit_minor": 0,
+                    "debit_minor": 1500000,
+                    "description": "虚构住房与生活支出",
+                    "evidence_ref_count": 3,
+                    "evidence_refs": [
+                      "fixture_tx_03",
+                      "fixture_tx_06",
+                      "fixture_tx_09"
+                    ],
+                    "evidence_refs_truncated": false,
+                    "net_change_minor": -1500000,
+                    "transaction_count": 3,
+                    "transaction_kind": "expense"
+                  },
+                  {
+                    "credit_minor": 0,
+                    "debit_minor": 600000,
+                    "description": "虚构餐饮交通与日常支出",
+                    "evidence_ref_count": 3,
+                    "evidence_refs": [
+                      "fixture_tx_04",
+                      "fixture_tx_07",
+                      "fixture_tx_10"
+                    ],
+                    "evidence_refs_truncated": false,
+                    "net_change_minor": -600000,
+                    "transaction_count": 3,
+                    "transaction_kind": "expense"
+                  },
+                  {
+                    "credit_minor": 300000,
+                    "debit_minor": 0,
+                    "description": "期初余额",
+                    "evidence_ref_count": 2,
+                    "evidence_refs": [
+                      "fixture_tx_00",
+                      "fixture_tx_01"
+                    ],
+                    "evidence_refs_truncated": false,
+                    "net_change_minor": 300000,
+                    "transaction_count": 2,
+                    "transaction_kind": "OPENING"
+                  },
+                  {
+                    "credit_minor": 0,
+                    "debit_minor": 9000,
+                    "description": "虚构云存储代扣",
+                    "evidence_ref_count": 3,
+                    "evidence_refs": [
+                      "competition_cloud_0",
+                      "competition_cloud_1",
+                      "competition_cloud_2"
+                    ],
+                    "evidence_refs_truncated": false,
+                    "net_change_minor": -9000,
+                    "transaction_count": 3,
+                    "transaction_kind": "expense"
+                  },
+                  {
+                    "credit_minor": 0,
+                    "debit_minor": 6500,
+                    "description": "虚构视频会员",
+                    "evidence_ref_count": 3,
+                    "evidence_refs": [
+                      "competition_video_3",
+                      "competition_video_4",
+                      "competition_video_5"
+                    ],
+                    "evidence_refs_truncated": false,
+                    "net_change_minor": -6500,
+                    "transaction_count": 3,
+                    "transaction_kind": "expense"
+                  }
+                ],
+                "limit": 20,
+                "omitted": {
+                  "credit_minor": 0,
+                  "debit_minor": 0,
+                  "group_count": 0,
+                  "net_change_minor": 0,
+                  "transaction_count": 0
+                },
+                "period": {
+                  "end_date": "2026-10-12",
+                  "start_date": "2026-01-01"
+                },
+                "returned_groups": 6,
+                "semantics": "RAW_DESCRIPTION_NOT_MERCHANT_OR_INDUSTRY",
+                "sort": "GROSS_FLOW_DESC_DESCRIPTION_KIND_ASC",
+                "total_groups": 6,
+                "truncated": false
+              },
+              "end_date": "2026-10-12",
+              "limitations": [
+                "账单仅覆盖绑定资料；空期间表示未观察到流水，不代表账户没有活动。",
+                "出账不等于消费，退款按本期入账展示，未据此修改原期账单。",
+                "类别来自来源或交易类型，不做未经确认的商户语义推断。",
+                "comparison_status仅表示是否执行比较，不证明前期资料齐全。",
+                "comparison_window只计算相邻等长日期；data_status=NOT_REQUESTED时未查询前期资料，不支持比较金额或变化结论。",
+                "period_metadata只分类请求日期，不证明流水完整；本期与前期各自分类，等长前期不自动等于上一个自然月。",
+                "net_change_minor是该观察期间已纳入流水的净流入，可能含退款、期初及内部调拨净额；不是可支配储蓄、可用余额或未来月度存钱能力。",
+                "DATE_WINDOW只能称所列期间，不能称每月；FULL_CALENDAR_MONTH只能称calendar_month所指的那个月，不能外推稳定的未来月度能力。"
+              ],
+              "metrics": [
+                {
+                  "denominator_path": "totals.income_minor",
+                  "display": {
+                    "exact_text": "88.15%",
+                    "phrases": [
+                      "本期消费支出占收入约88%（88.15%）",
+                      "本期消费支出占收入约八成八（88.15%）"
+                    ],
+                    "quantum": "1",
+                    "rounded_value": "88",
+                    "rounding": "ROUND_HALF_EVEN",
+                    "unit": "percent",
+                    "version": 1
+                  },
+                  "formula": "numerator / denominator * 100",
+                  "meaning": "本期消费支出占本期收入；不扣除退款，不是全部出账占比。",
+                  "name": "expense_to_income",
+                  "numerator_path": "totals.expense_minor",
+                  "period": {
+                    "end_date": "2026-10-12",
+                    "start_date": "2026-01-01"
+                  },
+                  "rounding": "ROUND_HALF_EVEN_2DP",
+                  "status": "DEFINED",
+                  "unit": "percent",
+                  "value_percent": "88.15"
+                },
+                {
+                  "denominator_path": "totals.income_minor",
+                  "display": {
+                    "exact_text": "24.35%",
+                    "phrases": [
+                      "本期净流入占收入约24%（24.35%）",
+                      "本期净流入占收入约二成四（24.35%）"
+                    ],
+                    "quantum": "1",
+                    "rounded_value": "24",
+                    "rounding": "ROUND_HALF_EVEN",
+                    "unit": "percent",
+                    "version": 1
+                  },
+                  "formula": "numerator / denominator * 100",
+                  "meaning": "本期净流入占本期收入；含该期所有已纳入口径流量，不等于可支配储蓄或账户余额。",
+                  "name": "net_flow_to_income",
+                  "numerator_path": "totals.net_change_minor",
+                  "period": {
+                    "end_date": "2026-10-12",
+                    "start_date": "2026-01-01"
+                  },
+                  "rounding": "ROUND_HALF_EVEN_2DP",
+                  "status": "DEFINED",
+                  "unit": "percent",
+                  "value_percent": "24.35"
+                }
+              ],
+              "period_metadata": {
+                "basis": "REQUESTED_DATE_RANGE",
+                "boundary": "INCLUSIVE",
+                "calendar_month": null,
+                "coverage_status": "NOT_ESTABLISHED",
+                "day_count": 285,
+                "end_date": "2026-10-12",
+                "period_kind": "DATE_WINDOW",
+                "start_date": "2026-01-01"
+              },
+              "policy_application": {
+                "category_increase": {
+                  "amount_basis": "SUM_OF_OUTGOING_MINOR",
+                  "group_by": [
+                    "category"
+                  ],
+                  "not_applicable_to": [
+                    "DESCRIPTION_GROUP",
+                    "SINGLE_TRANSACTION",
+                    "RECURRING_SEQUENCE"
+                  ],
+                  "policy_path": "analysis_policy.category_increase",
+                  "result_path": "category_changes[*].significant_increase_candidate",
+                  "scope": "CATEGORY_AGGREGATED_DEBIT",
+                  "status": "EVALUATED"
+                },
+                "contract_version": 1,
+                "description_comparison": {
+                  "meaning": "只比较原描述与交易类型分组的观察金额和笔数，不应用类别显著上涨规则。",
+                  "threshold_assessment": "NOT_PERFORMED"
+                }
+              },
+              "previous_period": {
+                "description_groups": {
+                  "all_evidence_refs_path": "previous_period.totals.evidence_refs",
+                  "evidence_ref_limit": 50,
+                  "group_by": [
+                    "description",
+                    "transaction_kind"
+                  ],
+                  "items": [],
+                  "limit": 20,
+                  "omitted": {
+                    "credit_minor": 0,
+                    "debit_minor": 0,
+                    "group_count": 0,
+                    "net_change_minor": 0,
+                    "transaction_count": 0
+                  },
+                  "period": {
+                    "end_date": "2025-12-31",
+                    "start_date": "2025-03-22"
+                  },
+                  "returned_groups": 0,
+                  "semantics": "RAW_DESCRIPTION_NOT_MERCHANT_OR_INDUSTRY",
+                  "sort": "GROSS_FLOW_DESC_DESCRIPTION_KIND_ASC",
+                  "total_groups": 0,
+                  "truncated": false
+                },
+                "end_date": "2025-12-31",
+                "metrics": [
+                  {
+                    "denominator_path": "previous_period.totals.income_minor",
+                    "display": null,
+                    "formula": "numerator / denominator * 100",
+                    "meaning": "本期消费支出占本期收入；不扣除退款，不是全部出账占比。",
+                    "name": "expense_to_income",
+                    "numerator_path": "previous_period.totals.expense_minor",
+                    "period": {
+                      "end_date": "2025-12-31",
+                      "start_date": "2025-03-22"
+                    },
+                    "rounding": "ROUND_HALF_EVEN_2DP",
+                    "status": "NON_POSITIVE_INCOME",
+                    "unit": "percent",
+                    "value_percent": null
+                  },
+                  {
+                    "denominator_path": "previous_period.totals.income_minor",
+                    "display": null,
+                    "formula": "numerator / denominator * 100",
+                    "meaning": "本期净流入占本期收入；含该期所有已纳入口径流量，不等于可支配储蓄或账户余额。",
+                    "name": "net_flow_to_income",
+                    "numerator_path": "previous_period.totals.net_change_minor",
+                    "period": {
+                      "end_date": "2025-12-31",
+                      "start_date": "2025-03-22"
+                    },
+                    "rounding": "ROUND_HALF_EVEN_2DP",
+                    "status": "NON_POSITIVE_INCOME",
+                    "unit": "percent",
+                    "value_percent": null
+                  }
+                ],
+                "period_metadata": {
+                  "basis": "REQUESTED_DATE_RANGE",
+                  "boundary": "INCLUSIVE",
+                  "calendar_month": null,
+                  "coverage_status": "NOT_ESTABLISHED",
+                  "day_count": 285,
+                  "end_date": "2025-12-31",
+                  "period_kind": "DATE_WINDOW",
+                  "start_date": "2025-03-22"
+                },
+                "start_date": "2025-03-22",
+                "totals": {
+                  "amounts": {
+                    "credit": "0.00",
+                    "debit": "0.00",
+                    "expense": "0.00",
+                    "income": "0.00",
+                    "internal_transfer_net": "0.00",
+                    "net_change": "0.00",
+                    "net_expense": "0.00",
+                    "opening_entries": "0.00",
+                    "refund": "0.00",
+                    "unclassified_credit": "0.00",
+                    "unclassified_debit": "0.00"
+                  },
+                  "categories": [],
+                  "count": 0,
+                  "credit_minor": 0,
+                  "debit_minor": 0,
+                  "evidence_refs": [],
+                  "expense_minor": 0,
+                  "income_minor": 0,
+                  "internal_transfer_net_minor": 0,
+                  "net_change_minor": 0,
+                  "net_expense_minor": 0,
+                  "opening_entries_minor": 0,
+                  "refund_minor": 0,
+                  "unclassified_credit_minor": 0,
+                  "unclassified_debit_minor": 0
+                }
+              },
+              "report_contract_version": 2,
+              "start_date": "2026-01-01",
+              "totals": {
+                "amounts": {
+                  "credit": "27000.00",
+                  "debit": "21155.00",
+                  "expense": "21155.00",
+                  "income": "24000.00",
+                  "internal_transfer_net": "0.00",
+                  "net_change": "5845.00",
+                  "net_expense": "21155.00",
+                  "opening_entries": "3000.00",
+                  "refund": "0.00",
+                  "unclassified_credit": "0.00",
+                  "unclassified_debit": "0.00"
+                },
+                "categories": [
+                  {
+                    "amounts": {
+                      "credit": "3000.00",
+                      "debit": "0.00"
+                    },
+                    "category": "OPENING",
+                    "count": 2,
+                    "credit_minor": 300000,
+                    "debit_minor": 0,
+                    "evidence_refs": [
+                      "fixture_tx_00",
+                      "fixture_tx_01"
+                    ]
+                  },
+                  {
+                    "amounts": {
+                      "credit": "0.00",
+                      "debit": "21155.00"
+                    },
+                    "category": "expense",
+                    "count": 12,
+                    "credit_minor": 0,
+                    "debit_minor": 2115500,
+                    "evidence_refs": [
+                      "competition_video_3",
+                      "competition_cloud_0",
+                      "fixture_tx_03",
+                      "fixture_tx_04",
+                      "competition_video_4",
+                      "competition_cloud_1",
+                      "fixture_tx_06",
+                      "fixture_tx_07",
+                      "competition_video_5",
+                      "competition_cloud_2",
+                      "fixture_tx_09",
+                      "fixture_tx_10"
+                    ]
+                  },
+                  {
+                    "amounts": {
+                      "credit": "24000.00",
+                      "debit": "0.00"
+                    },
+                    "category": "income",
+                    "count": 3,
+                    "credit_minor": 2400000,
+                    "debit_minor": 0,
+                    "evidence_refs": [
+                      "fixture_tx_02",
+                      "fixture_tx_05",
+                      "fixture_tx_08"
+                    ]
+                  }
+                ],
+                "count": 17,
+                "credit_minor": 2700000,
+                "debit_minor": 2115500,
+                "evidence_refs": [
+                  "competition_video_3",
+                  "fixture_tx_00",
+                  "fixture_tx_01",
+                  "competition_cloud_0",
+                  "fixture_tx_02",
+                  "fixture_tx_03",
+                  "fixture_tx_04",
+                  "competition_video_4",
+                  "competition_cloud_1",
+                  "fixture_tx_05",
+                  "fixture_tx_06",
+                  "fixture_tx_07",
+                  "competition_video_5",
+                  "competition_cloud_2",
+                  "fixture_tx_08",
+                  "fixture_tx_09",
+                  "fixture_tx_10"
+                ],
+                "expense_minor": 2115500,
+                "income_minor": 2400000,
+                "internal_transfer_net_minor": 0,
+                "net_change_minor": 584500,
+                "net_expense_minor": 2115500,
+                "opening_entries_minor": 300000,
+                "refund_minor": 0,
+                "unclassified_credit_minor": 0,
+                "unclassified_debit_minor": 0
+              }
+            }
+          },
+          "evidence_id": "insight_fd333bfa6508ef501bffd77b",
+          "scope": "bank"
+        }
+      }
+    ]
+  }
+}

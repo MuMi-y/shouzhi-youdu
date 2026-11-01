@@ -1,0 +1,20 @@
+<dialog id="goal-dialog"><button type="button" class="secondary" data-close="goal-dialog">返回对话</button><section id="goal-panel" class="panel goal-panel" data-bank hidden aria-labelledby="goal-title">
+<div class="panel-heading"><div><p class="eyebrow">让重要的事有安排</p><h2 id="goal-title">我的重点目标</h2></div><span class="tag">确定性计算 · 目标 AI 尚未接入</span></div>
+<div class="panel-body"><p id="goal-summary" aria-live="polite"></p>
+<details id="goal-editor"><summary>设定或修改目标</summary><p class="caption">一次性购置目标。其他已记录安排全部保留；这份偏好不授权转账或付款。</p>
+<form id="goal-form" class="goal-form">
+<label>目标名称<input id="goal-name" required maxlength="100" placeholder="例如：学习用电脑"></label>
+<label>为什么重要<input id="goal-reason" required maxlength="500" placeholder="由你定义这个目标的用途"></label>
+<label class="goal-wide">取舍原则<input id="goal-priority" required maxlength="500" placeholder="例如：优先保还款，能推迟购买"></label>
+<label>期望购置金额（元）<input id="goal-amount" inputmode="decimal" required placeholder="4500.00"></label>
+<label>可接受最低金额（元）<input id="goal-minimum" inputmode="decimal" required placeholder="3000.00"></label>
+<label>期望日期<input id="goal-date" type="date" required></label><label>最晚日期<input id="goal-latest" type="date" required></label>
+<label>至少保留余额（元）<input id="goal-reserve" inputmode="decimal" required placeholder="2000.00"></label>
+<div class="goal-wide operation-buttons"><button id="goal-save" class="primary" type="submit">核对并保存目标</button></div>
+</form></details><div class="operation-buttons"><button id="goal-compare" class="secondary">按当前账本比较方案</button></div>
+<p id="goal-basis" class="caption"></p><div id="goal-options" class="goal-options"></div><div id="goal-choice" aria-live="polite"></div>
+</div></section>
+</dialog>
+<dialog id="confirm-dialog"><div class="dialog-heading"><h2>核对操作明细</h2><button type="button" class="icon-button" id="close-confirm" aria-label="关闭">×</button></div><div id="confirm-details"></div><div id="challenge-field" hidden><p class="warning">本地模拟强验证，不是真实银行认证。</p><button id="get-challenge" class="secondary">获取模拟验证码</button><p id="challenge-text" class="caption"></p><label for="challenge-answer">填写模拟验证码</label><input id="challenge-answer" autocomplete="off"></div><div id="independent-field" hidden><p class="warning">使用独立口令和认证器验证码。请勿把凭据发送到聊天中。</p><label for="verify-password">独立口令</label><input id="verify-password" type="password" autocomplete="current-password"><label for="verify-otp">认证器 6 位验证码</label><input id="verify-otp" inputmode="numeric" maxlength="6" autocomplete="one-time-code"></div><p class="caption">只确认这一份明细。关闭此窗口不会执行操作。</p><button id="confirm-submit" class="primary full">确认执行</button></dialog>
+<dialog id="candidate-dialog"><form id="candidate-form"><div class="dialog-heading"><h2>更正关注项</h2><button id="candidate-close" type="button" class="icon-button" aria-label="关闭">×</button></div><input id="candidate-id" type="hidden"><input id="candidate-version" type="hidden"><label for="candidate-label">名称</label><input id="candidate-label" maxlength="200" required><label for="candidate-amount">预计金额（元）</label><input id="candidate-amount" inputmode="decimal" required><label for="candidate-date">预计日期</label><input id="candidate-date" type="date" required><p class="caption">仅更正关注偏好，不变更银行授权或商户合同。</p><button id="candidate-save" type="submit" class="primary full">保存并关注</button></form></dialog>
+<dialog id="unlock-dialog"><form id="unlock-form"><div class="dialog-heading"><h2>解除操作锁定</h2><button id="unlock-close" type="button" class="icon-button" aria-label="关闭">×</button></div><label for="unlock-password">独立口令</label><input id="unlock-password" type="password" autocomplete="current-password" required><label for="unlock-otp">认证器验证码</label><input id="unlock-otp" inputmode="numeric" maxlength="6" autocomplete="one-time-code" required><button id="unlock-submit" class="primary full" type="submit">验证并解除</button></form></dialog>

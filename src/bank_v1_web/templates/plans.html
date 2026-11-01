@@ -1,0 +1,23 @@
+<dialog id="plans-dialog" aria-labelledby="plans-title">
+  <div class="dialog-heading"><div><p class="eyebrow">把生活安排看清楚</p><h2 id="plans-title">我的计划</h2></div><button type="button" class="icon-button" data-close="plans-dialog" aria-label="关闭我的计划">×</button></div>
+  <p class="caption">这里是全部已确认安排。预计收入尚未到账；记录计划不等于付款。重点目标偏好独立保留，资金计算使用这里的最新安排。</p>
+  <p id="plans-error" class="warning" role="alert" hidden></p>
+  <p id="plans-notice" role="status"></p>
+  <div class="operation-buttons"><button type="button" id="plan-new" class="primary">新增计划</button><button type="button" id="plans-refresh" class="secondary">刷新列表与资金影响</button></div>
+  <div id="plans-list" class="plans-list"></div>
+  <details class="plans-overview"><summary>全部有效计划的资金影响</summary><div id="plans-overview"></div></details>
+  <section id="plan-editor" hidden aria-labelledby="plan-editor-title">
+    <h3 id="plan-editor-title">新增计划</h3>
+    <p id="plan-edit-version" class="caption"></p>
+    <form id="plan-form" class="plan-form">
+      <label class="plan-wide">计划名称<input id="plan-title" required maxlength="300" placeholder="例如：购置电脑"></label>
+      <label>计划类型<select id="plan-kind"><option value="goal">生活目标</option><option value="expense">应付支出</option><option value="income">预计收入</option></select></label>
+      <label>金额（元）<input id="plan-amount" required inputmode="decimal" placeholder="例如：5000.00"></label>
+      <label>计划日期<input id="plan-date" type="date" required></label>
+      <div class="operation-buttons plan-wide"><button id="plan-preview" type="submit" class="secondary">预览资金影响</button><button id="plan-discard" type="button" class="secondary">取消编辑</button></div>
+    </form>
+    <div id="plan-comparison" aria-live="polite"></div>
+    <div id="plan-pending-actions" class="operation-buttons" hidden><button id="plan-prepare" type="button" class="primary">核对并生成确认卡</button><button id="plan-reject" type="button" class="secondary" hidden>放弃此草案后修改</button></div>
+  </section>
+  <details id="plan-spending"><summary>试算一笔日常支出</summary><p class="caption">用同一份最新计划比较花与不花，不记录消费、不扣款。最多计算至一年内。</p><form id="plan-spending-form" class="plan-form"><label>拟支出金额（元）<input id="plan-spend-amount" required inputmode="decimal"></label><label>支出日期<input id="plan-spend-date" type="date" required></label><button id="plan-spend-submit" type="submit" class="secondary">比较花与不花</button></form><div id="plan-spend-result" aria-live="polite"></div></details>
+</dialog>

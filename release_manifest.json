@@ -1,0 +1,1668 @@
+{
+  "project": "收支有度",
+  "team": "从容计划",
+  "date": "2026-11-01",
+  "scope": "公开材料更新；应用代码保持冻结版本",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 62,
+      "sha256": "121beb455114a235e8309d857b0517d5b09931d26d35305b7a1474f8199f5a41"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 135,
+      "sha256": "fc2a456e9bb5b608af49cbfaae139b3c842a981da4ac099f76577c510a6d2864"
+    },
+    {
+      "path": "config/model_route.json",
+      "bytes": 179,
+      "sha256": "80bb6e90cea7f716ed8c849930eff2345ededa2c0f743bc44c43b4f608cd73a0"
+    },
+    {
+      "path": "config/settings.example.yaml",
+      "bytes": 1198,
+      "sha256": "49e11e167fd6ef5096a640cacc98b6aceaec0d7e0ebc0b759d6325ed1c421cad"
+    },
+    {
+      "path": "data/external/moneydata/date_comparison.json",
+      "bytes": 1541,
+      "sha256": "8668feaa889e6f685b29e01a1b851f6e3db8e19d43c61458c5a8d8d5f2077f5c"
+    },
+    {
+      "path": "data/external/moneydata/laramee26openBankTransactionData.xlsx",
+      "bytes": 507389,
+      "sha256": "716eaf9ad4a3cf60dc9c9c8a20ed9a917c545a1b5f139f40ed91d2104faa3ff7"
+    },
+    {
+      "path": "data/external/moneydata/SOURCE.md",
+      "bytes": 3019,
+      "sha256": "1e8d5ce0d7c1df594bb6b68b31c3489430611e44c331ae0351b9043d9ca66592"
+    },
+    {
+      "path": "data/synthetic/competition_v1/README.md",
+      "bytes": 1588,
+      "sha256": "36e4d6e9f82ffa61b75f59461f6b25284d3a22601e07f713347fc2c3a0e0a139"
+    },
+    {
+      "path": "data/synthetic/competition_v1/replay_cases.json",
+      "bytes": 3264,
+      "sha256": "c6540d03806416e9a3b5780a095295f51abed6d3204f45d09a235b9361d2fbfc"
+    },
+    {
+      "path": "data/working/moneydata_v1/README.md",
+      "bytes": 3498,
+      "sha256": "237e8b011d4ba03498df9b51880a5e070d0eba0009e211907952a6d534342432"
+    },
+    {
+      "path": "data/working/moneydata_v1/transactions.csv",
+      "bytes": 699183,
+      "sha256": "2a1dce1d528a390e478b29ad2484191b18cdf7567a0f89c7f66e196bd5695987"
+    },
+    {
+      "path": "data/working/moneydata_v1/validation.json",
+      "bytes": 880,
+      "sha256": "2e2e9148ae4c45d2325fb19f2ac6fefa057967009222b5fe69f404416500ff3a"
+    },
+    {
+      "path": "docs/COMPETITION_AI_STATUS.md",
+      "bytes": 2452,
+      "sha256": "212e018696d90a71f17c02a1e38a3e42725835940edb2cb6fb33296440048326"
+    },
+    {
+      "path": "docs/COMPETITION_RUNBOOK.md",
+      "bytes": 4758,
+      "sha256": "4bcbc7fe9986e8efa954884493682c17a1d665fe7ec8d84eca97f9c33504b0d3"
+    },
+    {
+      "path": "docs/FINAL_CANDIDATE_20261029.md",
+      "bytes": 220,
+      "sha256": "bf009bd41e39273f491af6d4e1aabfc3eb35da147c11e0f93980710def2fc2e6"
+    },
+    {
+      "path": "docs/有数_20261027体验版使用说明.md",
+      "bytes": 220,
+      "sha256": "bf009bd41e39273f491af6d4e1aabfc3eb35da147c11e0f93980710def2fc2e6"
+    },
+    {
+      "path": "docs/有数_第一次完整体验指南.md",
+      "bytes": 220,
+      "sha256": "bf009bd41e39273f491af6d4e1aabfc3eb35da147c11e0f93980710def2fc2e6"
+    },
+    {
+      "path": "management/AI工具调用与计算验收标准_2026-10-12.md",
+      "bytes": 5697,
+      "sha256": "8b18f36084aa7dd4b328c726974ce530a00de404a056301c5f47b3b12cf98dad"
+    },
+    {
+      "path": "management/contracts/COMPETITION_INSIGHTS.md",
+      "bytes": 6644,
+      "sha256": "6bd11db00a6f90ea936a028e122b4add6d6ea35550035f0f271a6fd91a71134b"
+    },
+    {
+      "path": "management/contracts/COMPETITION_SECURITY.md",
+      "bytes": 2924,
+      "sha256": "2498678a230143651d0fbb17a3f5e39cee4aa2fde2aab4c3433893d524606009"
+    },
+    {
+      "path": "management/contracts/COMPETITION_TASKS.md",
+      "bytes": 9053,
+      "sha256": "ffc226df62047bb9e668401cb3d2a7187471bf6b92c2c20c130e8860e2ec8471"
+    },
+    {
+      "path": "management/evidence/COMPETITION_V1/acceptance/cases.json",
+      "bytes": 111798,
+      "sha256": "cff80e667f5c9db21d580379c0266c903e531f030d28145e9b0b7ff03357d732"
+    },
+    {
+      "path": "node-runtime/package-lock.json",
+      "bytes": 324414,
+      "sha256": "bbd21ec952f3c961ad4889f3a7afa0f48fb5b4f821329e9fdab13132e9f2248a"
+    },
+    {
+      "path": "node-runtime/package.json",
+      "bytes": 1090,
+      "sha256": "cbf57f74df5ebf1ecd36c4f978236c612f843d8fea39c6258746fce4b3b4b016"
+    },
+    {
+      "path": "plugins/bank-v1/boot.cjs",
+      "bytes": 2052,
+      "sha256": "9ee5e1bb9a68a6539323f849a7d01a03c91dd3acfc2c2d1e0c33321eaab08c64"
+    },
+    {
+      "path": "plugins/bank-v1/driver.cjs",
+      "bytes": 4009,
+      "sha256": "38d5a01e6f31274b1119fc8c2c44a020195bc22c6727c769b8806368908bbd04"
+    },
+    {
+      "path": "plugins/bank-v1/moneydata_persona.txt",
+      "bytes": 3670,
+      "sha256": "81a7cc8e617b58d118a3ec135dd004113db721f06803ca7f4094302241ec92f1"
+    },
+    {
+      "path": "plugins/bank-v1/persona.txt",
+      "bytes": 36955,
+      "sha256": "5b3b77bea3c69d424b33bbf640f5bd8acee160112d670ea4fc2439ffb4380423"
+    },
+    {
+      "path": "plugins/bank-v1/README.md",
+      "bytes": 2890,
+      "sha256": "ae04403129094c8ad085f47e39e5bcf6b477f5f2b74bbdfe3b93d4769405b83d"
+    },
+    {
+      "path": "plugins/bank-v1/tools.cjs",
+      "bytes": 2652,
+      "sha256": "cb119a3596db18375a2f242f1fd4243a337fbc4c4162602d852802a8b5e6a5f1"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3805,
+      "sha256": "27444d088d2b8683847192c49d2e43e8b48a0914f3a4fd14d0a68a68befaae95"
+    },
+    {
+      "path": "requirements-competition.lock.txt",
+      "bytes": 319,
+      "sha256": "caba3e74027217437df1f2314dcd4682abcb5a4ab589506c2e9f6cf2d20f382b"
+    },
+    {
+      "path": "requirements-web.lock.txt",
+      "bytes": 190,
+      "sha256": "b0b3c6735b04ed077b81cd5e5517ba07ec3d1d83a278d546cce657a427582fc9"
+    },
+    {
+      "path": "scripts/acceptance_budget.py",
+      "bytes": 2923,
+      "sha256": "97ec0b638553d5057015472fdd4e701958392ec60dd6dbbd6ca7c6d32588ebbf"
+    },
+    {
+      "path": "scripts/acceptance_review_gate.py",
+      "bytes": 2755,
+      "sha256": "3814512b21f324b5dbfc4280d3803ce915db8de15f46bd21f09fa19e553beec2"
+    },
+    {
+      "path": "scripts/batch_budget.cjs",
+      "bytes": 4544,
+      "sha256": "0d9384de1c41419e03f9bf91af71eac15190d4c3defecb1563ea318df6a835dd"
+    },
+    {
+      "path": "scripts/broker_lifecycle.cjs",
+      "bytes": 2700,
+      "sha256": "d9e6eb8c8be8b7b946b5b5239ad70cc3a650996cd333be36995ac3e3a237ccc5"
+    },
+    {
+      "path": "scripts/check_dsh_runtime.cjs",
+      "bytes": 1966,
+      "sha256": "d55fc986b205bbdf05cf081a4a609bb3717c68f1be85924d9f8be791c793c7ac"
+    },
+    {
+      "path": "scripts/check_sandbox_runtime.cjs",
+      "bytes": 6119,
+      "sha256": "90d12b810c68f53c44b835afe4a9b83c673aaf44a95cd665920a94c00005c76b"
+    },
+    {
+      "path": "scripts/competition_acceptance_continuity.py",
+      "bytes": 12264,
+      "sha256": "ae007a32c6122e6ce50abd4c200a73dcc77e0950b0561071df3e5b8954a82743"
+    },
+    {
+      "path": "scripts/competition_acceptance_exact.py",
+      "bytes": 8175,
+      "sha256": "50b53b845b634e0d45b4a4d6da393441b1f9d2db60414a8da3902d45d8810d27"
+    },
+    {
+      "path": "scripts/competition_acceptance_gaps.py",
+      "bytes": 17335,
+      "sha256": "aba02d02cb77cfe835e07b907c139fd1db4abd8445db96fa5325cceafba2522c"
+    },
+    {
+      "path": "scripts/competition_acceptance_http.py",
+      "bytes": 12304,
+      "sha256": "6118f8a325e1bc35f459a8c38e77f690272812ab28ad07bc7e3c5c0af37367a5"
+    },
+    {
+      "path": "scripts/competition_acceptance_live.py",
+      "bytes": 36800,
+      "sha256": "7f213b5f3b606ddac44808569c29e011ce476e3065e9be427cc3b09168ebc10c"
+    },
+    {
+      "path": "scripts/competition_insights_evaluate.py",
+      "bytes": 7212,
+      "sha256": "7d234e6b1aa7ae71e911e180e114e3c886145b75cced60d9cabbba5f87c49818"
+    },
+    {
+      "path": "scripts/competition_insights_verify.py",
+      "bytes": 2512,
+      "sha256": "4479dfd39640de645ff879140853a75e34a602c9a0e378c234d3bb5f086fc396"
+    },
+    {
+      "path": "scripts/competition_package.py",
+      "bytes": 11455,
+      "sha256": "2373a7ade20a0c666b9474b7458bb15796314155ecae11ca02ff42daa1a5f672"
+    },
+    {
+      "path": "scripts/competition_security_enroll.py",
+      "bytes": 1051,
+      "sha256": "c3401b635267d9300f755058d1c19ba75154f9cb3e5c515e88ed642dc13abb96"
+    },
+    {
+      "path": "scripts/competition_security_story.py",
+      "bytes": 4201,
+      "sha256": "23761b25e0718d16e8ca3f8b5d874bfb8d835392ceb793078089801bc745cdf4"
+    },
+    {
+      "path": "scripts/competition_web.py",
+      "bytes": 5108,
+      "sha256": "4c04bda0c0640a10063b0ebab29c9b41e267d88bae5cb11c6f36604e9d0df208"
+    },
+    {
+      "path": "scripts/dsh_container.cjs",
+      "bytes": 4495,
+      "sha256": "9b2e54dcc7dbecdfde4d27d349b0c78d82293419d2fcb01ff70a15843b717e6d"
+    },
+    {
+      "path": "scripts/dsh_sandbox.cjs",
+      "bytes": 8575,
+      "sha256": "ab82d684b7560db90b830318b23d997cb8ef3ea9191a904b9060c68bda176814"
+    },
+    {
+      "path": "scripts/dsh_v1.cjs",
+      "bytes": 14596,
+      "sha256": "48a699903fa5836b563c61fa7b3cf18cd668a9c4340cd5b1a875c8282ebe0130"
+    },
+    {
+      "path": "scripts/ensure_docker.ps1",
+      "bytes": 3326,
+      "sha256": "39e050f9e2c111a42d8b91986266ec703f240bd6d3db05c3f4373769883b5a6b"
+    },
+    {
+      "path": "scripts/g1_goal_demo.py",
+      "bytes": 3178,
+      "sha256": "1d00170f6b0d03d38e4fdf0fbc9009c197683d1879c283da6db48341934f3499"
+    },
+    {
+      "path": "scripts/g2b_control.py",
+      "bytes": 27647,
+      "sha256": "15358f576f49e1397d44c1d78aa20185c7fc3937137109daa1494a48743d78c8"
+    },
+    {
+      "path": "scripts/g2b_story.py",
+      "bytes": 30511,
+      "sha256": "33fa8458ef813a92ce7ed38c285c245dbb4f16de1e5bc28a435ddc7c420d4b41"
+    },
+    {
+      "path": "scripts/g2b_sync.py",
+      "bytes": 12540,
+      "sha256": "5de87717a6260e0678a362b40e466f9af48ec302e8414c58f61b476da6351c1a"
+    },
+    {
+      "path": "scripts/model_route.cjs",
+      "bytes": 1306,
+      "sha256": "013062162b5908a01e7cf5a817add7f685cd1b54486cd29dc12fc3d9879b8586"
+    },
+    {
+      "path": "scripts/product_budget.py",
+      "bytes": 4217,
+      "sha256": "53451534b1aad666100dff90d0d6b5bbde06b2a7facf264b081e04141ad62c80"
+    },
+    {
+      "path": "scripts/sandbox_layout.cjs",
+      "bytes": 1722,
+      "sha256": "fd877e3b2c89948d9dfd3d43e65e1bcb2bd0b8a98d068ef67f16061f9bd099fc"
+    },
+    {
+      "path": "scripts/sandbox_provider.cjs",
+      "bytes": 611,
+      "sha256": "811beedfb3133cdd375ec9a031825b4dcea39becb79f1fd972ca69f8a7916b4a"
+    },
+    {
+      "path": "scripts/start_competition.ps1",
+      "bytes": 10168,
+      "sha256": "ff79d89d7db90d18fc312ce79c1ce5638fec7df2f3c7f090b3b77c210aa612bc"
+    },
+    {
+      "path": "scripts/start_product.ps1",
+      "bytes": 5116,
+      "sha256": "288c2c96d497769fee5bd87eef119d084cb7d58e37a8ec4fee8a4251c571fcd5"
+    },
+    {
+      "path": "src/bank_evidence/__init__.py",
+      "bytes": 60,
+      "sha256": "4784398b990712aac31769ae08bb26c1d81d48f798fd39a8f5ec3e1daa9472e5"
+    },
+    {
+      "path": "src/bank_evidence/answer.py",
+      "bytes": 10315,
+      "sha256": "4fb5743a5b87bbd2e97fd2dcf1f72eda923fdaac7fbf236685c2a95528ecdba0"
+    },
+    {
+      "path": "src/bank_evidence/assumption_scope.py",
+      "bytes": 426,
+      "sha256": "7e1d8f8cb956f1d5a1a91e198dd6cbc9ca6ee91c68e73e858779b2d39d1e986f"
+    },
+    {
+      "path": "src/bank_evidence/billing_answer.py",
+      "bytes": 4204,
+      "sha256": "dd920941a948e8354bef142901627fbe18f112351dbf8737ca531fa0ace0339f"
+    },
+    {
+      "path": "src/bank_evidence/billing_render.py",
+      "bytes": 6669,
+      "sha256": "1e22e26d9fd50e921d976b0d91cc0f4b4bdbfe76e6b74f98198b7d02b3448b04"
+    },
+    {
+      "path": "src/bank_evidence/calculation.py",
+      "bytes": 8807,
+      "sha256": "e9c44dfa8470f68f7ec316479f513c912b92d52771c3ca8625c448b3b6db7c97"
+    },
+    {
+      "path": "src/bank_evidence/calculation_store.py",
+      "bytes": 2230,
+      "sha256": "ef68b4346901b7e743008dd7a8789ba93efd26a097df5c185005f29cff4f6f86"
+    },
+    {
+      "path": "src/bank_evidence/calculation_tree.py",
+      "bytes": 1560,
+      "sha256": "2c25a3e6218187235e80d955070375b2a61fbbd7ac81a8b4fe85fb999bea168c"
+    },
+    {
+      "path": "src/bank_evidence/dialogue_parts.py",
+      "bytes": 6304,
+      "sha256": "daaefed2efe94abd1c1b44d21150a742fae5e4a49922eaebccf6699e6b5a3c4c"
+    },
+    {
+      "path": "src/bank_evidence/envelope.py",
+      "bytes": 1933,
+      "sha256": "c9540a9473be632aac0c502208a83f2c40ab3edc06947f64877f265beaa38008"
+    },
+    {
+      "path": "src/bank_evidence/facts.py",
+      "bytes": 4507,
+      "sha256": "ce597819c67f77561731da0c775abc2ab42340cf25bc460019dc2918eae82bf0"
+    },
+    {
+      "path": "src/bank_evidence/freshness.py",
+      "bytes": 2685,
+      "sha256": "5f3489984e5a5b6af6e55ad8f93ae736802ed7a28effbbf15fea9a260280260a"
+    },
+    {
+      "path": "src/bank_evidence/insight_parts.py",
+      "bytes": 7565,
+      "sha256": "b066af8f884b9197de32d7c9a10856488ba365ce1e8f889320b9e401d7026d85"
+    },
+    {
+      "path": "src/bank_evidence/ledger_facts.py",
+      "bytes": 2125,
+      "sha256": "a72da164b8954354f0ec9d9858d518e514e7bee753f2902b680a9336b8553cee"
+    },
+    {
+      "path": "src/bank_evidence/service_answer.py",
+      "bytes": 10094,
+      "sha256": "dd7ac85423336f3986d2034959cd247a29988c21f104ee0bb4274c8496e54de0"
+    },
+    {
+      "path": "src/bank_evidence/service_render.py",
+      "bytes": 6610,
+      "sha256": "5c6938e6ce97bd47a436f4abcbd01a5853a600df31763c1a307cff54cc003911"
+    },
+    {
+      "path": "src/bank_evidence/spending_answer.py",
+      "bytes": 9177,
+      "sha256": "c9838e09b0ca686f6679fd741db845a2d186d79c6684d72bde279363aaaf012d"
+    },
+    {
+      "path": "src/bank_evidence/transfer_shortfall.py",
+      "bytes": 3283,
+      "sha256": "8d889ba58b411ae29ea103a98023b658b45336dce3773a926505a424d0dfabf2"
+    },
+    {
+      "path": "src/bank_goals/__init__.py",
+      "bytes": 142,
+      "sha256": "6254da442fb4b0ee4b5d09e41d4d13bb7dded8a42c5ba7a60d47c3b1dd7099d7"
+    },
+    {
+      "path": "src/bank_goals/clarification.py",
+      "bytes": 3903,
+      "sha256": "294c015a75b5b431948a9843c69d15403c873f631d1db8eb32ab5c820e86b20e"
+    },
+    {
+      "path": "src/bank_goals/contracts.py",
+      "bytes": 2790,
+      "sha256": "a7d5d9eefb757f08723142656bdafee8a544de999c4000d0315c1b50ee5b6335"
+    },
+    {
+      "path": "src/bank_goals/current_plan.py",
+      "bytes": 2641,
+      "sha256": "545df2b68f3a735acdfe595081e11616880868a48098ef041b02ee1afc316e78"
+    },
+    {
+      "path": "src/bank_goals/date_review.py",
+      "bytes": 2314,
+      "sha256": "7495c4d68871085b7267d9e9331ee827b91b6cf8eef985bbf27154414c3a027d"
+    },
+    {
+      "path": "src/bank_goals/evidence.py",
+      "bytes": 18442,
+      "sha256": "d75c3f3982aed04763de68e9d15f13e9a4b775de6bf8194982cb0b745f782aed"
+    },
+    {
+      "path": "src/bank_goals/followup.py",
+      "bytes": 13367,
+      "sha256": "9c1f9a6258679505e37f8b82d6217afc0c0e0370c16baffc87f7c52aa5c53ddc"
+    },
+    {
+      "path": "src/bank_goals/impact.py",
+      "bytes": 10312,
+      "sha256": "2fbbdf79e3461a909bf37a7f88e9f93ea7c4875cb70c68bd457343ee7919419e"
+    },
+    {
+      "path": "src/bank_goals/impact_answer.py",
+      "bytes": 4489,
+      "sha256": "9ef33182e08aadd30bdc8c2e3eb013c44f42e46ebda388daf8a5c1acc817231b"
+    },
+    {
+      "path": "src/bank_goals/impact_basis.py",
+      "bytes": 3796,
+      "sha256": "0872e818c87cd7dde287d4f2c34b210db8d54cd2d64c4208b81022291eeff15e"
+    },
+    {
+      "path": "src/bank_goals/impact_context.py",
+      "bytes": 2012,
+      "sha256": "0c742833ab7692349c7827ae6bb8184329d946fe212245163d3e6237609cb1fb"
+    },
+    {
+      "path": "src/bank_goals/impact_contract.py",
+      "bytes": 5320,
+      "sha256": "c978e64ebd9d04f0f0600c3016740c39175430465a73ef0935e6add484b18bf2"
+    },
+    {
+      "path": "src/bank_goals/preview.py",
+      "bytes": 3338,
+      "sha256": "ec355f8486aaec25c4ab9b77a51a8a55f0d71a578f7702765242953c67313c69"
+    },
+    {
+      "path": "src/bank_goals/preview_answer.py",
+      "bytes": 5871,
+      "sha256": "2e4171c2cefae4a10c08f96b0f359d2da5128e95867bde7a1773a1df0511b505"
+    },
+    {
+      "path": "src/bank_goals/projection.py",
+      "bytes": 3040,
+      "sha256": "49d399e1aa464262e1b6b05615d1b1813307c0e8bf85b7ef58a58b1f8cc19b25"
+    },
+    {
+      "path": "src/bank_goals/service.py",
+      "bytes": 14320,
+      "sha256": "7a9eae25ad25cf10c2e3dbb66850da137bf24ef4a91ef0696a98e494bbc8426b"
+    },
+    {
+      "path": "src/bank_goals/service_health.py",
+      "bytes": 3313,
+      "sha256": "717e7c3cea41a46a00a553d137d6ca3788b3cd2c5250733143b86ea8c173aa89"
+    },
+    {
+      "path": "src/bank_goals/storage.py",
+      "bytes": 1587,
+      "sha256": "8ade609a32bc64f4c2e6d608a1c60ab12d230d03a5474b3f2ccc8631e559fa36"
+    },
+    {
+      "path": "src/bank_goals/tools.py",
+      "bytes": 10248,
+      "sha256": "cef614e09ed9f3630049954a11d7f4acc5eeeb655f941734b9f3e7358ccbbe2a"
+    },
+    {
+      "path": "src/bank_insights/__init__.py",
+      "bytes": 266,
+      "sha256": "ccf5370a977b73993535f04dc8892d7ae0d356ab7b320645ce0d6456fdaf8255"
+    },
+    {
+      "path": "src/bank_insights/fixture.py",
+      "bytes": 1841,
+      "sha256": "c26250453a54c6aae202676a3467766aaf70eece473dea84539b4be9c74fb5ed"
+    },
+    {
+      "path": "src/bank_insights/notifications.py",
+      "bytes": 2052,
+      "sha256": "7a84a4f82b79cf59270b11c9bf3b6b7f85355492d000eb7c33de58d4850228e7"
+    },
+    {
+      "path": "src/bank_insights/policy.py",
+      "bytes": 4235,
+      "sha256": "2dead39d8443a8ce9a77bfa877686da6022f2231caec3613c4de42c8eb39b07b"
+    },
+    {
+      "path": "src/bank_insights/ratio_display.py",
+      "bytes": 1644,
+      "sha256": "d771fbf9ebe576869a27d2349f2335c46b6fa5d842220cf5bbb7790d8cf5beea"
+    },
+    {
+      "path": "src/bank_insights/rules.py",
+      "bytes": 24733,
+      "sha256": "3b9d3abd11cabd794b4cbe53b5c137f21ed5af7d10513d06a88402f57f6d9dfd"
+    },
+    {
+      "path": "src/bank_insights/service.py",
+      "bytes": 21289,
+      "sha256": "e3d546bbce7b5226e29d826a80074fd09cf3b428242c9b1856b98fcdb7c861aa"
+    },
+    {
+      "path": "src/bank_requests/__init__.py",
+      "bytes": 74,
+      "sha256": "7609c6ec07e3b02243fb77182244eeea67d177c43393880a70c2e7b0f9998e7b"
+    },
+    {
+      "path": "src/bank_requests/actions.py",
+      "bytes": 5210,
+      "sha256": "561592baac66b54439d1887bb6b90f0b25b06f0dc8c112450b08484b1f97ade4"
+    },
+    {
+      "path": "src/bank_requests/attempt_projection.py",
+      "bytes": 7251,
+      "sha256": "84b56be7ac185896e1207b92794cbdab32da2f4fa2cca857a05416ab075d519d"
+    },
+    {
+      "path": "src/bank_requests/billing_dates.py",
+      "bytes": 16240,
+      "sha256": "b4800ad805321a5adfc74a81149a436f0f5e3dcba12a653f0a5817e3c52f2ef5"
+    },
+    {
+      "path": "src/bank_requests/cashflow_dates.py",
+      "bytes": 12107,
+      "sha256": "5caaa44605d8086f4028c4cf3a3904a5659a8f1d1b73d4258fbb169082e66b49"
+    },
+    {
+      "path": "src/bank_requests/components.py",
+      "bytes": 16225,
+      "sha256": "c482e33f424916d2ac633f38ceef590c8cb05c4994a664f47a98a46ab3394c5d"
+    },
+    {
+      "path": "src/bank_requests/constraints.py",
+      "bytes": 20306,
+      "sha256": "2ac4b3f35b53abede4301db51b4378247535eedcb146dc27480229c4dfe1a5a5"
+    },
+    {
+      "path": "src/bank_requests/context.py",
+      "bytes": 17610,
+      "sha256": "c2b9ca9afd8a51fe3ff097d771d400e533aa4f19b3314bbf5b6fac649df93dd4"
+    },
+    {
+      "path": "src/bank_requests/decision.py",
+      "bytes": 14486,
+      "sha256": "10ba92863ba8bc2309b2fb2c68b09e43dbff0932637a121d5b9da81b4c9f40a1"
+    },
+    {
+      "path": "src/bank_requests/delivery.py",
+      "bytes": 8803,
+      "sha256": "c9a66b48374dda1c08d476ba17fc1c31f8fd28bead69a22dd51ed9c2a937a51c"
+    },
+    {
+      "path": "src/bank_requests/execution.py",
+      "bytes": 1281,
+      "sha256": "1a081e6aa4493e3d41a19093448e2f9529fa1023a574d679d55ac497dcc6c6cd"
+    },
+    {
+      "path": "src/bank_requests/gateway.py",
+      "bytes": 8725,
+      "sha256": "f58bf2d7ec927c93ab37661ea870a593f1688db286d07a0443e82a85636fe3c1"
+    },
+    {
+      "path": "src/bank_requests/goal_continuation.py",
+      "bytes": 8430,
+      "sha256": "6287d7729e7f92ede136dae6e3685d1a8de8f9beb91539476ea7489a9d7bc553"
+    },
+    {
+      "path": "src/bank_requests/goal_prepare_identity.py",
+      "bytes": 6460,
+      "sha256": "074699650c224a02ae08c7f05a3466a011c91c366885651ecaa591744e721d96"
+    },
+    {
+      "path": "src/bank_requests/goal_profile_reference.py",
+      "bytes": 8318,
+      "sha256": "defb67cb2c8b548e77138acfa7ec60ce8307d5fa23731f2d534831c123bb7b33"
+    },
+    {
+      "path": "src/bank_requests/normalization.py",
+      "bytes": 13299,
+      "sha256": "3d945d33dfaead21968bc7c51167e6c04018da18ae3c6910d37d5d87998d9480"
+    },
+    {
+      "path": "src/bank_requests/objects.py",
+      "bytes": 10863,
+      "sha256": "9ec02ce115a955378f6e83e81b0958b39378ae2fc56f5f28b923584c8e8d583d"
+    },
+    {
+      "path": "src/bank_requests/outcomes.py",
+      "bytes": 19680,
+      "sha256": "d9fa62238db34dda50fb0a0d8c8d76b6abcbc569ad105320407d9d853f4fdd74"
+    },
+    {
+      "path": "src/bank_requests/policy.py",
+      "bytes": 10146,
+      "sha256": "66ec5937268ba29c7ca15a5e822a751faf78fa9908dba1a1d45aae72fe84068f"
+    },
+    {
+      "path": "src/bank_requests/protocol.py",
+      "bytes": 748,
+      "sha256": "7e1fec6f4937246748842623d814b8738681d07a5a8c190be4f0a1ba405bd37d"
+    },
+    {
+      "path": "src/bank_requests/response.py",
+      "bytes": 7721,
+      "sha256": "86e36d1ab986b7e6cda75e9904d423eb6a510f8934846551827f2dde60e28a7a"
+    },
+    {
+      "path": "src/bank_requests/schema.py",
+      "bytes": 13796,
+      "sha256": "7d5135664c668efd44c3f2a4eb388b12edf2f203133b77b718567a15323c08da"
+    },
+    {
+      "path": "src/bank_tasks/__init__.py",
+      "bytes": 189,
+      "sha256": "7d36dd8b8e4ca4fd49dd8c8aef225f587f7490042d802bf84e98c1ec8eec17f7"
+    },
+    {
+      "path": "src/bank_tasks/progress.py",
+      "bytes": 7978,
+      "sha256": "aedaf1d7026d852e0da60868b5f039f4894f7cc8e6e605ecda6b5161a434679b"
+    },
+    {
+      "path": "src/bank_tasks/service.py",
+      "bytes": 28901,
+      "sha256": "1bee85a9803698af0d02fb70ff9a67a6c48b3c6c3bf4fcf91feb797c176d99b9"
+    },
+    {
+      "path": "src/bank_tasks/validation.py",
+      "bytes": 7107,
+      "sha256": "44dca6623a137699436c6b5a06a01e117e748417f1237729baf968766fb9a639"
+    },
+    {
+      "path": "src/bank_v1/__init__.py",
+      "bytes": 143,
+      "sha256": "ae50041e629e91f9a7c7907c2cb2f92adf886cb79585f9f5313d61242ca9847e"
+    },
+    {
+      "path": "src/bank_v1/balance_conditions.py",
+      "bytes": 1235,
+      "sha256": "b95301ed2571a62783b19ad5c932f0ad707f7d8648271e1a7f871fd806d2aa36"
+    },
+    {
+      "path": "src/bank_v1/basis_guard.py",
+      "bytes": 1195,
+      "sha256": "57a0285ccca9ea3504d54132fb9a79c0352b0cb523ee8a54d2092a2679718d98"
+    },
+    {
+      "path": "src/bank_v1/common.py",
+      "bytes": 1742,
+      "sha256": "34144add01ec96390bd3940ddc856802b8fe516387e00c6b48ebbf4a186000ad"
+    },
+    {
+      "path": "src/bank_v1/events.py",
+      "bytes": 13939,
+      "sha256": "5bba237e95de937f2a5df1df489e1722ceadf0da2c936fbda4385d8bc0c494c5"
+    },
+    {
+      "path": "src/bank_v1/finance.py",
+      "bytes": 12313,
+      "sha256": "da5974df728775d33b1cc1f1f3757aa4b84d76d4f537779fc9151a1495407e99"
+    },
+    {
+      "path": "src/bank_v1/mandate_match.py",
+      "bytes": 6168,
+      "sha256": "5daa6024ae70bdb9e4b3cbc61206e0ad175dca2df4cd8bce72b64bfdb9bd39a1"
+    },
+    {
+      "path": "src/bank_v1/matching.py",
+      "bytes": 6650,
+      "sha256": "52442faad41cd0bf880d4222a72ad0457146cb2f1206ab4d4c39b112622c7836"
+    },
+    {
+      "path": "src/bank_v1/operations.py",
+      "bytes": 12422,
+      "sha256": "db774f20726d4eaacdbd7ba83dcf577d7dd58abe6b5d97d41d9252ca47cf725c"
+    },
+    {
+      "path": "src/bank_v1/plan_projection.py",
+      "bytes": 2298,
+      "sha256": "5396da9b664daf50cba01e994c2df9bd9770016811fd7721b07a1cb7aec3b188"
+    },
+    {
+      "path": "src/bank_v1/plans.py",
+      "bytes": 7308,
+      "sha256": "bde843937d292ab5ee4c182a1b1c7b5723873d1c55376cca7d585e62cc0f4858"
+    },
+    {
+      "path": "src/bank_v1/projection_journal.py",
+      "bytes": 4310,
+      "sha256": "9386eeeb1e4d3718a22806cf901dc728788220a4dc58e913c1ddf4479047b713"
+    },
+    {
+      "path": "src/bank_v1/schemas.py",
+      "bytes": 7064,
+      "sha256": "93367ae9d552b56c217610dc5e97d5959af2f824e1046e4b853d7146f311e4cb"
+    },
+    {
+      "path": "src/bank_v1/security.py",
+      "bytes": 10038,
+      "sha256": "5f952d1e72cc9aa25ca00bee42dbc3f8f910b9a3a9c77243231f400b24524bba"
+    },
+    {
+      "path": "src/bank_v1/service.py",
+      "bytes": 8266,
+      "sha256": "ac52ad772a7871d166f12b1d14d2d7a132f26005fd8f38b1a8c20c69d4415b50"
+    },
+    {
+      "path": "src/bank_v1/storage.py",
+      "bytes": 7455,
+      "sha256": "67b5e0e19b2b0f7b5b9d30212c3fc616655e8bffe9098a80e67364505a08b062"
+    },
+    {
+      "path": "src/bank_v1_web/__init__.py",
+      "bytes": 68,
+      "sha256": "dbea077e845d6e9aa6af978e91ad386bb57f6f77b211132006927021036f0033"
+    },
+    {
+      "path": "src/bank_v1_web/app.py",
+      "bytes": 13161,
+      "sha256": "f794d15b1fc1ea9fb7ca04c9cad20f4684c1808f665ca9fbebc38d8fcc050eb7"
+    },
+    {
+      "path": "src/bank_v1_web/bank_answer.py",
+      "bytes": 113429,
+      "sha256": "5511fb6453b7ab2145ba29438bbf60a6d8fa93c532011fa28df216ec905170c0"
+    },
+    {
+      "path": "src/bank_v1_web/bank_execution_retry.py",
+      "bytes": 5228,
+      "sha256": "bf9f5d5f6c97f1908a49102d84cd9cef457acfaa03048b8874af596fc8854e1e"
+    },
+    {
+      "path": "src/bank_v1_web/bank_repair.py",
+      "bytes": 6888,
+      "sha256": "6736a0f51bfe8bfee7e32d25f88ae2a122abb294f0380612b40a31bed21eb11d"
+    },
+    {
+      "path": "src/bank_v1_web/billing_periods.py",
+      "bytes": 3638,
+      "sha256": "817703887a97c9f3cd58889534d8be4bc024b94c9693dc6faab5ba797f63e67b"
+    },
+    {
+      "path": "src/bank_v1_web/billing_ratio_display.py",
+      "bytes": 4550,
+      "sha256": "251885011e5efe5a71555153d4f8ea94c3b8135c265afb906b2727d7014ba7c3"
+    },
+    {
+      "path": "src/bank_v1_web/display_check.py",
+      "bytes": 1443,
+      "sha256": "132d6f4246e82f2263de7393ac391aeb7683821cd4a92020214ab041ea0b755f"
+    },
+    {
+      "path": "src/bank_v1_web/errors.py",
+      "bytes": 1098,
+      "sha256": "680cb86760243d8af5a85337b69f9ae3193a8aa938c7eb32d5621a1e6944a848"
+    },
+    {
+      "path": "src/bank_v1_web/forecast_minimum.py",
+      "bytes": 13489,
+      "sha256": "e996ecb4e11d2b51c1a42e2f78a4d427d34eff4922192937e3284a7c503921f3"
+    },
+    {
+      "path": "src/bank_v1_web/handoff_contracts.py",
+      "bytes": 2003,
+      "sha256": "54948464a04763f8a14f278de82b29580d75034f48ba2edb1715b2c470ed8e18"
+    },
+    {
+      "path": "src/bank_v1_web/handoff_read_failure.py",
+      "bytes": 2690,
+      "sha256": "0ddfc7933d67c25d93a72197b78374729b0e9857a830c0bbb9680bb46115f95c"
+    },
+    {
+      "path": "src/bank_v1_web/handoff_reconcile.py",
+      "bytes": 13005,
+      "sha256": "9fdfcb31160185ab9719477f7375242d8ca51afa45b04e9f2efd74140435aa98"
+    },
+    {
+      "path": "src/bank_v1_web/handoff_store.py",
+      "bytes": 38293,
+      "sha256": "8d2837c423d7f0355138e0d17cb47c54cf03a0457192fb5c3374d85b9afe63cb"
+    },
+    {
+      "path": "src/bank_v1_web/history_answer.py",
+      "bytes": 3341,
+      "sha256": "013ad70012c8a3346bda279887d2ed37dc61f0d82919a2c2854751b0865ad9f0"
+    },
+    {
+      "path": "src/bank_v1_web/job_display.py",
+      "bytes": 2064,
+      "sha256": "6945786b367c659bd9fc225ded293a405d25e6e5d6f496d16457d99ea03a5754"
+    },
+    {
+      "path": "src/bank_v1_web/jobs.py",
+      "bytes": 15580,
+      "sha256": "b95fc56c8eb96bec9ac6244ce19c71c2b3aedbeabf49da164858c5a27604d3df"
+    },
+    {
+      "path": "src/bank_v1_web/model_route.py",
+      "bytes": 393,
+      "sha256": "f266a6f0b92f61559f837beb4657e37102479e0924a89cf68f6d7a4748e017eb"
+    },
+    {
+      "path": "src/bank_v1_web/run_trace.py",
+      "bytes": 2532,
+      "sha256": "c086c8ca5e84d90d6dbfeb2d942076e412fc1503673e543d6182b8ecd535d83c"
+    },
+    {
+      "path": "src/bank_v1_web/static/app.css",
+      "bytes": 19347,
+      "sha256": "3b8b9973ed9b9c8c53bcb49386b1abda26e8f86c148285359d4885e6724c8132"
+    },
+    {
+      "path": "src/bank_v1_web/static/app.js",
+      "bytes": 29785,
+      "sha256": "8aaa78c9f1d5bd629c9380babec60b49f41f44b8793152405e6c4181b25fa813"
+    },
+    {
+      "path": "src/bank_v1_web/static/chat.css",
+      "bytes": 8797,
+      "sha256": "b20a3db4b8dcc5d2c91545c8758cada3c1335c9ee03798569178141e5145df24"
+    },
+    {
+      "path": "src/bank_v1_web/static/chat.js",
+      "bytes": 21095,
+      "sha256": "285a0a323ff48d6065ef2b548f1113d4a30b26fd4c61b1cfe3a1c70e6b47cbea"
+    },
+    {
+      "path": "src/bank_v1_web/static/competition.js",
+      "bytes": 9712,
+      "sha256": "68434ca9988d476f13a1dc42dc3a7b3461f9df13c8893a44430ea3b3651ea815"
+    },
+    {
+      "path": "src/bank_v1_web/static/conversation.js",
+      "bytes": 2587,
+      "sha256": "ec2236312c761470a690446034c295c4a8fa1b4c11910221940a235d7276724f"
+    },
+    {
+      "path": "src/bank_v1_web/static/goals.css",
+      "bytes": 2495,
+      "sha256": "015a19eb354e8c02d9a3662c8b1275e1b608625f6a3d2a2f526d02943c356071"
+    },
+    {
+      "path": "src/bank_v1_web/static/goals.js",
+      "bytes": 15440,
+      "sha256": "1dffb09ff68a61584bcfb010d7739a26d3ecf0a77f9fa44c823a01cf30657935"
+    },
+    {
+      "path": "src/bank_v1_web/static/history.js",
+      "bytes": 5903,
+      "sha256": "3e22246403a97a37679f6196df31364c5be210af10382a71b58dcca35c355a27"
+    },
+    {
+      "path": "src/bank_v1_web/static/living-room.png",
+      "bytes": 2077817,
+      "sha256": "40f0797c198e90f5e68f0dcd201909b0c2a544e6aa9142ce2aa0c5b9e15dd85b"
+    },
+    {
+      "path": "src/bank_v1_web/static/plans.js",
+      "bytes": 11640,
+      "sha256": "fd1d75375090f0f42f415fdbf31ea5a852466e5086a557563c2c98a5bff7e319"
+    },
+    {
+      "path": "src/bank_v1_web/static/runtime.js",
+      "bytes": 2740,
+      "sha256": "1f35aed071f28fabe9b6d1e992b36382748860a14b37847585b1ca8d8ff01950"
+    },
+    {
+      "path": "src/bank_v1_web/task_progress_answer.py",
+      "bytes": 4687,
+      "sha256": "2c2a51f4449ca9bb1a04e9372642c2d576abc390dd878f84d11cc1f20df31274"
+    },
+    {
+      "path": "src/bank_v1_web/templates/chat_controls.html",
+      "bytes": 4555,
+      "sha256": "857292ace52061f6edf26f94b57ca113f3773558bdef7dce516d7a303dcb047e"
+    },
+    {
+      "path": "src/bank_v1_web/templates/index.html",
+      "bytes": 4174,
+      "sha256": "005ac6608b4c7494c824b88cffabf365cef5966a277e3a363272d9908e6cfb0e"
+    },
+    {
+      "path": "src/bank_v1_web/templates/plans.html",
+      "bytes": 2880,
+      "sha256": "57410adaa748833c7d7cea75cf89b75bd3b8fde17810eb8fc3c7c39020f93bf5"
+    },
+    {
+      "path": "src/bank_v1_web/templates/workbench.html",
+      "bytes": 15103,
+      "sha256": "369fc4f923865880af65f6477372f517323501d326b936d4333934c0e2252868"
+    },
+    {
+      "path": "src/bank_v1_web/worker.py",
+      "bytes": 26908,
+      "sha256": "acd2483661ece38101dac3f8b62929a9bf47736191687dc44639c02c98ceb481"
+    },
+    {
+      "path": "src/competition_web/__init__.py",
+      "bytes": 70,
+      "sha256": "1d167fb6ed9134977f56c1219f37fdb828cdc84185f48dbac907805ca3fe287b"
+    },
+    {
+      "path": "src/competition_web/app.py",
+      "bytes": 6465,
+      "sha256": "2ded0c458b8fa015adc356e30fbb84faa34032df5f833eea9d9589d4f927596a"
+    },
+    {
+      "path": "src/competition_web/docker_health.py",
+      "bytes": 1356,
+      "sha256": "37004a120ed34ffb048d8c19b7c9324f89107d02083ed4e73c84fad5d938d165"
+    },
+    {
+      "path": "src/competition_web/money_calculate.py",
+      "bytes": 6108,
+      "sha256": "5e70f16c0dd5f9b3b7ffccff1b74ee6a66ca3eabbcf815fb6d3ee943b7141011"
+    },
+    {
+      "path": "src/competition_web/pump.py",
+      "bytes": 2698,
+      "sha256": "49e9807ca122c7a7c79427142870c8ae70c555c1df65684b69e394a587d16c7f"
+    },
+    {
+      "path": "src/competition_web/runtime_status.py",
+      "bytes": 5731,
+      "sha256": "514aeafde7d2b8b7d0c601091c858ead7b72972afb0bc8efb3077c6a327eef63"
+    },
+    {
+      "path": "src/competition_web/service.py",
+      "bytes": 14328,
+      "sha256": "c268a2d7085025f96a2c277b2f7648ec0056672a2c52763e67b70b19d71e2596"
+    },
+    {
+      "path": "src/moneydata_history/__init__.py",
+      "bytes": 222,
+      "sha256": "4122b611ff25ddce58fa5a2b93cb0893b53b92d714b2bcaea32a2e843a9ba9c1"
+    },
+    {
+      "path": "src/moneydata_history/service.py",
+      "bytes": 11567,
+      "sha256": "ad37e1d9216791331ca2545fec5874876267a5f37b605eb525355f8076633073"
+    },
+    {
+      "path": "src/moneydata_history/source.py",
+      "bytes": 6678,
+      "sha256": "914ee02cfb96bfd6a942b0dde206199765c03e7c8181575c6d4bb68579b19516"
+    },
+    {
+      "path": "src/moneydata_history/storage.py",
+      "bytes": 4823,
+      "sha256": "4f3709143f5c3bb38d287ab5a02e58513a48bd64494698724d97fea2c98fb626"
+    },
+    {
+      "path": "submission/01_技术文档_收支有度.pdf",
+      "bytes": 291123,
+      "sha256": "f4d0a479488e534b850dc966d28d72c4644bf491c365b1414e3fbc9cbef9219b"
+    },
+    {
+      "path": "submission/02_答辩材料_收支有度.pptx",
+      "bytes": 84608,
+      "sha256": "bfffdd437bc94f5468d6d9128231fdf5fe37554e72d9fc8e1f7422a9af372c35"
+    },
+    {
+      "path": "submission/04_安全自评报告_收支有度.pdf",
+      "bytes": 249214,
+      "sha256": "a652e4c38e8dad8237df329689eb72f2b19cfae2609aab1eb9585686c477f2aa"
+    },
+    {
+      "path": "submission/安全自评.md",
+      "bytes": 4612,
+      "sha256": "5c701781180595ad3fef22bd7019ec27e9cdac2c1045cf3c27f99400a014a44a"
+    },
+    {
+      "path": "submission/技术说明.md",
+      "bytes": 6343,
+      "sha256": "6c561da126c3cf151dc0c9fa661c13f52f7ee8850dabc74fcf6f05bc83e4f546"
+    },
+    {
+      "path": "submission/答辩讲稿.md",
+      "bytes": 6319,
+      "sha256": "a8239540ceaa130aca052764fdd59a733281d3d17086a09ed119eee2a045be1f"
+    },
+    {
+      "path": "tests/competition_ai/check_conversation.mjs",
+      "bytes": 1986,
+      "sha256": "9f174e3d9a3dd98636cff451f4be650f0a979c07f0ee8d68d72bb75e387fb807"
+    },
+    {
+      "path": "tests/competition_ai/fixtures/b02_date_failure_20261019.json",
+      "bytes": 21644,
+      "sha256": "51e811e76be1be7343feb66ccf00d46fa8d65a3095ceff98b507b3bf0d7af9dd"
+    },
+    {
+      "path": "tests/competition_ai/fixtures/b02_display_spaces_20261019.json",
+      "bytes": 44865,
+      "sha256": "b51037c28cf73d79e0d56d3ef765bb80982921413509ef24ef85011abd2bcc32"
+    },
+    {
+      "path": "tests/competition_ai/fixtures/b08_ratio_failure_20261019.json",
+      "bytes": 41748,
+      "sha256": "bd24544f7a56f20e6a46d8219d3885e1785fa836267a6fdb8620e7c0b903e599"
+    },
+    {
+      "path": "tests/competition_ai/test_account_shortfall.py",
+      "bytes": 5369,
+      "sha256": "0a2bc2d6e174d2bac251168f644c3a79ba9bf602b12a65f37548bf242878e10c"
+    },
+    {
+      "path": "tests/competition_ai/test_action_scope.py",
+      "bytes": 8764,
+      "sha256": "8a6d4045e502781f24ebb454367813423b4235a86cc3123a46428da47c75b1c2"
+    },
+    {
+      "path": "tests/competition_ai/test_answer_envelope.py",
+      "bytes": 5249,
+      "sha256": "3698b7a515d480eb15deed86aa8944725a422e20dce0170cc908102d4992f24a"
+    },
+    {
+      "path": "tests/competition_ai/test_balance_conditions.py",
+      "bytes": 5953,
+      "sha256": "1b7a5443f8bc3ac6d80ccec61215210336c22121aade56423c43f53b4bb739e7"
+    },
+    {
+      "path": "tests/competition_ai/test_bank_answer.py",
+      "bytes": 13550,
+      "sha256": "5ce31946b763ec294153533e7b9c357963411b33d9c46ab84ddfab7794c323a3"
+    },
+    {
+      "path": "tests/competition_ai/test_bank_numeric_policy.py",
+      "bytes": 9646,
+      "sha256": "e8137940e2f5dc8662c441bfc45fd32ffa638e6dbb6d1a964ca922633b227575"
+    },
+    {
+      "path": "tests/competition_ai/test_bank_repair.py",
+      "bytes": 7518,
+      "sha256": "166fca373d612bce956b013d94afb2ee6ce159d658a7190055784bd2ec9d25a9"
+    },
+    {
+      "path": "tests/competition_ai/test_billing_answer_typed.py",
+      "bytes": 6514,
+      "sha256": "d8a329e269bb69c7d91655703833b9a2f6f0e175a1db6fa1da6812aac088f4b1"
+    },
+    {
+      "path": "tests/competition_ai/test_billing_previous_period.py",
+      "bytes": 5111,
+      "sha256": "f503cf313745337c89ec0021745f35bb68310363b41e892f0e076469a30fa517"
+    },
+    {
+      "path": "tests/competition_ai/test_billing_ratio_display.py",
+      "bytes": 8313,
+      "sha256": "11428aace841ab3c240f30f6eae8d2d9338b19b544c7ee951202c0fb51abe881"
+    },
+    {
+      "path": "tests/competition_ai/test_bound_calculation.py",
+      "bytes": 10257,
+      "sha256": "89f7b22e52152ef1d8e9ff0d96c2c4b8b8532e2dda19477c02f13c1deae8fc47"
+    },
+    {
+      "path": "tests/competition_ai/test_broker_lifecycle.cjs",
+      "bytes": 5519,
+      "sha256": "5c3f8c3beb226ad04193b9ae50651c5fe6f53866024eb7d00185803f0e64fd29"
+    },
+    {
+      "path": "tests/competition_ai/test_calculated_deficit.py",
+      "bytes": 5077,
+      "sha256": "721d89d32d8c58287b816f2f34d4b33955682594ef4ed891d9e7259485504e44"
+    },
+    {
+      "path": "tests/competition_ai/test_chat_dependency.py",
+      "bytes": 1167,
+      "sha256": "41d97afd82fd27ea2436c43d4a70342086198803c5059befd5662ac67b17c50e"
+    },
+    {
+      "path": "tests/competition_ai/test_chat_flow.py",
+      "bytes": 1840,
+      "sha256": "39dad93a354ea5dbd397a9f507140b2effe723ce4f56623d650337d164d05852"
+    },
+    {
+      "path": "tests/competition_ai/test_chinese_ratio.py",
+      "bytes": 7630,
+      "sha256": "a7d237e81d51208c83f29a8fec621d3886a57954d94d6264a3e2215881e7c928"
+    },
+    {
+      "path": "tests/competition_ai/test_conditional_reconcile.py",
+      "bytes": 10266,
+      "sha256": "91e3901382c9fa581111e3cd8a67845877e5a5e1d27e0ea3776ae1738f52e3ed"
+    },
+    {
+      "path": "tests/competition_ai/test_confirmation_time_reference.py",
+      "bytes": 8920,
+      "sha256": "b2b4b62b2ab84b401fe7bab659358a3270b0d7881ca258c0da30aa014216e053"
+    },
+    {
+      "path": "tests/competition_ai/test_currency_prefix.py",
+      "bytes": 16182,
+      "sha256": "22b4e6584b90afaa602bb491933204e4f2b12a434e4eb48360f92b17b0a02378"
+    },
+    {
+      "path": "tests/competition_ai/test_deficit_suffix.py",
+      "bytes": 5868,
+      "sha256": "18318b1d359be1b17eec590f77a4eb8b2c56d0b15ae56cd311517ffa8bb2225f"
+    },
+    {
+      "path": "tests/competition_ai/test_dialogue_parts.py",
+      "bytes": 8968,
+      "sha256": "c9dd6109d7808bfe737cc27127a8ce6ee2040602a5c296f73026be8cbec2ec0c"
+    },
+    {
+      "path": "tests/competition_ai/test_docker_health.py",
+      "bytes": 2829,
+      "sha256": "90191819e4f6cf36faf02b56209184682f48597f4e07de0c92f6627c7cb19de0"
+    },
+    {
+      "path": "tests/competition_ai/test_execution_retry.py",
+      "bytes": 14410,
+      "sha256": "3d1f1a0343c07f466e68fc1d1492c3c7ac46c0d94aa2aa62eeb63c44bc9b3fb4"
+    },
+    {
+      "path": "tests/competition_ai/test_fact_answer.py",
+      "bytes": 4449,
+      "sha256": "66c4e85fed8edfaa51b62864c426b52e0ae8e405a6c422eb98646c3bf01b309f"
+    },
+    {
+      "path": "tests/competition_ai/test_forecast_minimum.py",
+      "bytes": 17191,
+      "sha256": "08a35ea3f8ec5f82406f0cd6c8a5ac6c652a57f08e81de724750c4a435ca0681"
+    },
+    {
+      "path": "tests/competition_ai/test_future_plan_evidence.py",
+      "bytes": 18615,
+      "sha256": "2f0637b1eaf3868820303457274a54b220f58dc956a5e92db00455920d35ebec"
+    },
+    {
+      "path": "tests/competition_ai/test_future_preparation.py",
+      "bytes": 2264,
+      "sha256": "b07d490305f67c6c6e10622a6e2ba680ad11f458fdef86a90cd51b98da01f473"
+    },
+    {
+      "path": "tests/competition_ai/test_future_replan_offer.py",
+      "bytes": 3828,
+      "sha256": "3f85296a5b4e1a35308684df7d109d14bb475e058f94bae007efba686d4ce75c"
+    },
+    {
+      "path": "tests/competition_ai/test_goal_continuation.py",
+      "bytes": 13490,
+      "sha256": "d8e3e6186e1e45943b4f7c8388c1b41c0e08512971012095404b626d98661c37"
+    },
+    {
+      "path": "tests/competition_ai/test_goal_prepare_contract.py",
+      "bytes": 10102,
+      "sha256": "6c7fb25bb01764c1e3d64a79fe40a8866fdb7f8a8ed78e33551f91b42629e00d"
+    },
+    {
+      "path": "tests/competition_ai/test_handoff_attempts.py",
+      "bytes": 13964,
+      "sha256": "21a7a4a9d86ff4d3ddf0fe0309bc82070eaa8ab8fc968b071cdb71d2adf689fd"
+    },
+    {
+      "path": "tests/competition_ai/test_handoff_goals.py",
+      "bytes": 7519,
+      "sha256": "4bbb0107feda3510939293fc476bddf7748f2c4da8e6255e952f3009ed0799cb"
+    },
+    {
+      "path": "tests/competition_ai/test_handoff_protocol.py",
+      "bytes": 7582,
+      "sha256": "3bcc6fb8df4d70709f6c77951ea8a826e3df42deb8b71f1f0e31b7b6275b22c7"
+    },
+    {
+      "path": "tests/competition_ai/test_handoff_read_failure.py",
+      "bytes": 9767,
+      "sha256": "e19c3a50b5cde464bb08efc48a68029fb1c6d7586248f4fc589e7ad7f8b7659e"
+    },
+    {
+      "path": "tests/competition_ai/test_handoff_reconciliation.py",
+      "bytes": 9569,
+      "sha256": "187532196fd15875a95f053d980b6e78750f0e7ca65fa8c7dce2644b7cad84f2"
+    },
+    {
+      "path": "tests/competition_ai/test_handoff_recovery.py",
+      "bytes": 8235,
+      "sha256": "6b016dfb82887363aa16fb83142469fc6cb08a3295a36a22f4dd1a9e302eb03e"
+    },
+    {
+      "path": "tests/competition_ai/test_handoff_trace.py",
+      "bytes": 3345,
+      "sha256": "c623014611a4efd4d4bc4135ebadcb34cc0f9d38a704341e200775dccd615a42"
+    },
+    {
+      "path": "tests/competition_ai/test_historical_posted_report.py",
+      "bytes": 16690,
+      "sha256": "b583455960b99c49d104c20ecd25a50cf9b3e290c975e67145a0a3e7c33bd119"
+    },
+    {
+      "path": "tests/competition_ai/test_insight_parts.py",
+      "bytes": 6426,
+      "sha256": "48ab9e029cf17064f063db256d5764247575dc32e3cec58d91dc92e97158f5f6"
+    },
+    {
+      "path": "tests/competition_ai/test_ledger_chain.py",
+      "bytes": 9864,
+      "sha256": "524fddad5bff32c8463aaa84880b167c9197ba4ce0c36fb62734bcde53c6cf5c"
+    },
+    {
+      "path": "tests/competition_ai/test_model_credential_redaction.cjs",
+      "bytes": 1519,
+      "sha256": "ad0854c16719c5ac9f1658479ff8ebc6b721656da3e87f2d9013c6816f41d8d5"
+    },
+    {
+      "path": "tests/competition_ai/test_model_route.cjs",
+      "bytes": 1840,
+      "sha256": "10639d96e3d4cc5e257ee8690f37c87dada65999a6cce6d2fd2621f316d35e7b"
+    },
+    {
+      "path": "tests/competition_ai/test_model_route.py",
+      "bytes": 1228,
+      "sha256": "acfb9bace55a842cedf1305658689625d4fdb09cdd121d0f4b763c8568914a46"
+    },
+    {
+      "path": "tests/competition_ai/test_money_calculate.py",
+      "bytes": 7913,
+      "sha256": "644b7838e19095a37e1cefa82fc58f60c33b8536765ca3fb98b7cef6c01dfaec"
+    },
+    {
+      "path": "tests/competition_ai/test_money_calculate_integration.py",
+      "bytes": 10566,
+      "sha256": "caca8416b5cfd24defc8ff2b29104f550d6ec50f405aee23ecce2dc31b65f5e6"
+    },
+    {
+      "path": "tests/competition_ai/test_negated_any_preparation.py",
+      "bytes": 6427,
+      "sha256": "98ba396a89f61f3859e803fe2356af8ca1900ac139993be4678f66083677be60"
+    },
+    {
+      "path": "tests/competition_ai/test_negated_preparation.py",
+      "bytes": 9348,
+      "sha256": "a0a93390f9ef0a4ed64541cfb1b3c0124a6d381c4ec3f16e40c4e850b680d810"
+    },
+    {
+      "path": "tests/competition_ai/test_operation_reference.py",
+      "bytes": 12323,
+      "sha256": "55fafee3bb7095948e5d6a7c32a378456a1469930c7d6e851856dcd0659c2014"
+    },
+    {
+      "path": "tests/competition_ai/test_operation_rejected_at.py",
+      "bytes": 4928,
+      "sha256": "3a32e62e410eac6fd7ef47b6ca9945acebdf9d8ae35f191d0847c42423289843"
+    },
+    {
+      "path": "tests/competition_ai/test_optional_future_service.py",
+      "bytes": 2273,
+      "sha256": "1bce27099b08c3fcecb109f6f5eea4d67d17e48309486ffaa909a0a9faa96687"
+    },
+    {
+      "path": "tests/competition_ai/test_percent_repair.py",
+      "bytes": 3292,
+      "sha256": "bbd8bb7858f56add03c0566c5c0a37396ed27ff03566ddb8a3fb424a291a3471"
+    },
+    {
+      "path": "tests/competition_ai/test_policy_finite_phrases.py",
+      "bytes": 4287,
+      "sha256": "382049caa41b860b6ad8d77655099a966c1e05f7d473912e2b617dfd350f89ef"
+    },
+    {
+      "path": "tests/competition_ai/test_policy_named_ratio.py",
+      "bytes": 2186,
+      "sha256": "b4c2f75aa4a1080324bdfea0653ba7e500eee236c0d40badc5f344a55bef4f01"
+    },
+    {
+      "path": "tests/competition_ai/test_policy_reaching.py",
+      "bytes": 4496,
+      "sha256": "90985bb86fe1fcaf712177c70ad5828be884a09ae2db90e20383e05aeb42fe56"
+    },
+    {
+      "path": "tests/competition_ai/test_policy_suffix.py",
+      "bytes": 6602,
+      "sha256": "1711bcff62098f40e6140267ad9835b9583c0d9b05189d7c70777439592d70f2"
+    },
+    {
+      "path": "tests/competition_ai/test_preparation_claim_sources.py",
+      "bytes": 6283,
+      "sha256": "e815b62bb77c7a57ff6ec288f07e6f8e85a9357b1b1e8f8ec8c8cfb00ee5712c"
+    },
+    {
+      "path": "tests/competition_ai/test_preparation_refusal.py",
+      "bytes": 7632,
+      "sha256": "4eaa404cd819e6300e1531161608b132a0796bd8a5e360115b4a8216795c4244"
+    },
+    {
+      "path": "tests/competition_ai/test_preparation_refusal_card.py",
+      "bytes": 5357,
+      "sha256": "ad64b1a52c7f744604f13929d68aed09f3c65870a91384f74b11af648a153ffd"
+    },
+    {
+      "path": "tests/competition_ai/test_receipt_repair.py",
+      "bytes": 13638,
+      "sha256": "5e6a91f3f47c9527b6c51a6936e5fee06ec3ca1abbdca4c0354345b9816e7d34"
+    },
+    {
+      "path": "tests/competition_ai/test_request_actions.py",
+      "bytes": 13045,
+      "sha256": "2f7c6f38333e8b3e82c34c6219d1dcbe533ac3d0808c37d71b52af9a1b49420b"
+    },
+    {
+      "path": "tests/competition_ai/test_request_constraints.py",
+      "bytes": 23023,
+      "sha256": "b470927c3aec6fffa3c4d8d8c012173e0fa6c5720a71c08a1ad2b2669fb990ca"
+    },
+    {
+      "path": "tests/competition_ai/test_request_context.py",
+      "bytes": 4251,
+      "sha256": "11ddbef8385b931ea3bf1dc8cffc0249a82f94d5761e08980da62c8b5a80ed89"
+    },
+    {
+      "path": "tests/competition_ai/test_request_decision.py",
+      "bytes": 6428,
+      "sha256": "16f2940f5d0e8eec0b904ce83f1ce29db558e8fb6a7e83bd30f70b5275ddead3"
+    },
+    {
+      "path": "tests/competition_ai/test_request_delivery.py",
+      "bytes": 14598,
+      "sha256": "53d04a3c21f205553d069d18d8eed673ea3bc564b4f334c50da73d93128bc932"
+    },
+    {
+      "path": "tests/competition_ai/test_request_execution.py",
+      "bytes": 2740,
+      "sha256": "4d24acad2532cf719303ecaf1cd3e4d2931c8a8161439e3faa8b265122ffdc53"
+    },
+    {
+      "path": "tests/competition_ai/test_request_gateway.py",
+      "bytes": 23733,
+      "sha256": "94f697c97e0126c7590210a78f99ec5852ef5882e1f4b075f6fb9198ec17bee1"
+    },
+    {
+      "path": "tests/competition_ai/test_request_goal_delivery.py",
+      "bytes": 4574,
+      "sha256": "53f4a14f2864a4d862d308390d6a160c2453fc250ac04ddc337a5155a7c2cee5"
+    },
+    {
+      "path": "tests/competition_ai/test_request_normalization.py",
+      "bytes": 4079,
+      "sha256": "a46b2a6cfe204af12c6114f718d03a37457c7b961f84ad4c10fa850c9eb60470"
+    },
+    {
+      "path": "tests/competition_ai/test_request_objects.py",
+      "bytes": 16219,
+      "sha256": "7805e631328231193ee9a286dff954542cd3088b8f585b76b87fdf2aed04cce0"
+    },
+    {
+      "path": "tests/competition_ai/test_request_runner.py",
+      "bytes": 10177,
+      "sha256": "2a360639694dbe61984f87bae2dd032a9883d810fdaa3cebe922bf46ae4db2ab"
+    },
+    {
+      "path": "tests/competition_ai/test_review_invitation.py",
+      "bytes": 14957,
+      "sha256": "9ba797a5de74b28c7335643d89f7422600bd45f021c8f3085ce3b11ab74dff5b"
+    },
+    {
+      "path": "tests/competition_ai/test_runtime_status.py",
+      "bytes": 5041,
+      "sha256": "8cfa54f82fa8976a4bc6fa32e9d8575cde999f1a733dd6dba3fd5fdee366796b"
+    },
+    {
+      "path": "tests/competition_ai/test_sandbox_provider.cjs",
+      "bytes": 4181,
+      "sha256": "bcef33ec3b0ca155a16350847ed3747b3d799d4ea7df83bf04a5c95b32a9d583"
+    },
+    {
+      "path": "tests/competition_ai/test_service_answer.py",
+      "bytes": 8935,
+      "sha256": "242df235021299f32ece6991d8ac61fcec4b4898aad63a8d476b8d3453498ba4"
+    },
+    {
+      "path": "tests/competition_ai/test_shared_display_check.py",
+      "bytes": 2557,
+      "sha256": "4d06931eaf1b7581df298088b032d95acb5d4c9929cd2217fc6483b904dabed6"
+    },
+    {
+      "path": "tests/competition_ai/test_spending_answer.py",
+      "bytes": 5461,
+      "sha256": "1f143af205c363927b198cf4a24ac4b9e7ed618dbdaa5b57438e71477c1f87b0"
+    },
+    {
+      "path": "tests/competition_ai/test_task_negative_state.py",
+      "bytes": 11465,
+      "sha256": "69f4bb1104ab9fcf0b1fa8a8ffe99423da19fcd4068d2ddbc49715a3fee2d800"
+    },
+    {
+      "path": "tests/competition_ai/test_task_prepare_recovery.py",
+      "bytes": 15970,
+      "sha256": "71e6fe33394f4215783e82c82f407315758dccf409bb7287f1e1281eede608d1"
+    },
+    {
+      "path": "tests/competition_ai/test_task_progress_answer.py",
+      "bytes": 7218,
+      "sha256": "d9ca46264180e2d38fbc1aba5c1f2b444a1224bb1609831757de2accf8805ae4"
+    },
+    {
+      "path": "tests/competition_ai/test_task_readonly_success.py",
+      "bytes": 7729,
+      "sha256": "6eaeb8267d4a19758fa46fec0b4f41efd037859376870e3b4750a8cb7e08e490"
+    },
+    {
+      "path": "tests/competition_ai/test_task_stage_progress.py",
+      "bytes": 14982,
+      "sha256": "c97281c91dfc3b7b2cfd869834d16ed92d3bf35a1517554d9ab391d3fd69a07d"
+    },
+    {
+      "path": "tests/competition_ai/test_temporal_action_clause.py",
+      "bytes": 11710,
+      "sha256": "e1624ce2eee362e10f2a7ea23f37620c10da7fb78ba49fef4030d4602fde9c94"
+    },
+    {
+      "path": "tests/competition_ai/test_transfer_shortfall.py",
+      "bytes": 5137,
+      "sha256": "907dc7e0c8d5d5ce4434c7a523af241f582fa40bbc75c2fb33e298d1fe68cbc8"
+    },
+    {
+      "path": "tests/competition_ai/test_verification_standard.py",
+      "bytes": 2300,
+      "sha256": "95e82a25c07d362cb24edd2661eeb0bdfe18823ac483ba8afe1979aa6ac53dda"
+    },
+    {
+      "path": "tests/competition_ai/test_worker_contract.py",
+      "bytes": 5159,
+      "sha256": "b3cc37287ce9f3ac99e4468a2a663433a4374df327ac72528b766c60a33b16b6"
+    },
+    {
+      "path": "tests/competition_eval/test_failed_turn.py",
+      "bytes": 13705,
+      "sha256": "42d7deeb964851f46b2ad6c27e94c22eb0547e031c456e6a017068791f1cce1b"
+    },
+    {
+      "path": "tests/competition_insights/test_billing_evidence.py",
+      "bytes": 15041,
+      "sha256": "cb4c9e02a6e03c4ee29e23089b0f43c10f5ffe57264df6cce53591611bd1192d"
+    },
+    {
+      "path": "tests/competition_insights/test_billing_kind_summaries.py",
+      "bytes": 2723,
+      "sha256": "049c45b16cd838519dff301fca11cbe12f50ead7bf3a38813d1b3f01aac47bcb"
+    },
+    {
+      "path": "tests/competition_insights/test_billing_period.py",
+      "bytes": 9390,
+      "sha256": "c395fae8991aa70d3f531221bf0b95632f4ad6b4ed71b15d1555b6d949edf0a7"
+    },
+    {
+      "path": "tests/competition_insights/test_comparison_status.py",
+      "bytes": 2717,
+      "sha256": "ea53b4763cf104bf160314ccc9780fe39a3e709e8f923b7fe5d9c75df65b570b"
+    },
+    {
+      "path": "tests/competition_insights/test_description_comparison.py",
+      "bytes": 13572,
+      "sha256": "aff22c0437b82527d7aec546408e96651f335750187edfabda030bda56df5d7c"
+    },
+    {
+      "path": "tests/competition_insights/test_insights.py",
+      "bytes": 13635,
+      "sha256": "a0c0310e8cb81181f218e4324b136efd4442606fe83702c328614ba0d2cfeadc"
+    },
+    {
+      "path": "tests/competition_insights/test_notification_groups.py",
+      "bytes": 5537,
+      "sha256": "b3206a29096302b36c1054cdbbf55ac9facf767740240e8605f35ad42e11a40f"
+    },
+    {
+      "path": "tests/competition_insights/test_policy_application.py",
+      "bytes": 6349,
+      "sha256": "61186daf5b9f2d853310b59f6531f5874c1307627042fd0a0e26a351e9aa8929"
+    },
+    {
+      "path": "tests/competition_policy/test_policy.py",
+      "bytes": 16948,
+      "sha256": "3f1021e4df9151a9e63b42b2d26c6470d1d8ef1e4fe3a5af00b1518537c42a14"
+    },
+    {
+      "path": "tests/competition_security/test_security.py",
+      "bytes": 10955,
+      "sha256": "cb7183c04f99f161ac17ad239cecdd8423d893825f23a25fd3e537a1f4f03384"
+    },
+    {
+      "path": "tests/competition_tasks/test_mandate_match.py",
+      "bytes": 18490,
+      "sha256": "2183746fed8fa3d07761989b9496a41af8e90d10c965b06aee99d131881f8b6f"
+    },
+    {
+      "path": "tests/competition_tasks/test_replanning_guidance.py",
+      "bytes": 12647,
+      "sha256": "eadf6a35cf9fed8c48e80f587e9a94d50506f24336028857186a6ac7b36af32d"
+    },
+    {
+      "path": "tests/competition_tasks/test_tasks.py",
+      "bytes": 13656,
+      "sha256": "2fdf4917e3923d2be3bb00a1e457bdc266a1ed19f2713a3bd59d1ee5ff0b90cc"
+    },
+    {
+      "path": "tests/g2_goals/test_current_plan.py",
+      "bytes": 9302,
+      "sha256": "74d6723ca9c78b3ed0406268eee0acdd0adf199e090c0cb9968e055cffc2745a"
+    },
+    {
+      "path": "tests/g2_goals/test_preview.py",
+      "bytes": 11717,
+      "sha256": "37948d49fc45a2c06869f28bd42876105a8964fb81fc18beff829c86fc4da789"
+    },
+    {
+      "path": "tests/g2_goals/test_service.py",
+      "bytes": 16037,
+      "sha256": "11b1838604cf26fa89b476adc29d9952b251688dba1c7161ea812a84c265b630"
+    },
+    {
+      "path": "tests/g2_goals/test_service_health.py",
+      "bytes": 7698,
+      "sha256": "a4c61cb95b5a7d27177ffc1b3642213c9f132c33cdc8c97b6697c55e55e23918"
+    },
+    {
+      "path": "tests/test_final_reserve.py",
+      "bytes": 2179,
+      "sha256": "c9142125719e1a6ff5f9867704e9f7c87c029448075f1314074aa2d8efb0a619"
+    },
+    {
+      "path": "tests/test_goal_impact.py",
+      "bytes": 16636,
+      "sha256": "78b90562ef7cb48d5548a2f4b4994b77037a186cbcdf7d9c7b7b56433155afb8"
+    },
+    {
+      "path": "tests/test_plan_window.py",
+      "bytes": 8881,
+      "sha256": "0e8c12c6244a3eee126a723b6a4259f5db644c86795066d566ad6a898055559d"
+    },
+    {
+      "path": "tests/v1_dev/test_forecast_date_semantics.py",
+      "bytes": 9286,
+      "sha256": "7d5d70fe99cbbbb95dca7778c7d9f32d6080a62e5c9712bea1ff76c7246057a0"
+    },
+    {
+      "path": "tests/v1_dev/test_forecast_scenario_minima.py",
+      "bytes": 8224,
+      "sha256": "124fe28974cf8550e9281b9a2bc2e3bc4c758e90287e228bfb409a289f869635"
+    },
+    {
+      "path": "tests/v1_dev/test_forecast_scope.py",
+      "bytes": 5046,
+      "sha256": "33037c30ba67e413159ba504152e05dbbee0d39f4236b5182bc1895ea2b91105"
+    },
+    {
+      "path": "third_party/licenses/blinker-LICENSE.txt",
+      "bytes": 1054,
+      "sha256": "9eb73a1f38597a4aa17025d2ae1be3839624c795e985d4f0e9769ce29faca467"
+    },
+    {
+      "path": "third_party/licenses/click-LICENSE.txt",
+      "bytes": 1475,
+      "sha256": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d"
+    },
+    {
+      "path": "third_party/licenses/Flask-LICENSE.txt",
+      "bytes": 1475,
+      "sha256": "489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea"
+    },
+    {
+      "path": "third_party/licenses/itsdangerous-LICENSE.txt",
+      "bytes": 1475,
+      "sha256": "63af09891b6be8ad1a4252ed43af0f4efba7fc948e228367bed7f3c5ae0b09d7"
+    },
+    {
+      "path": "third_party/licenses/Jinja2-LICENSE.txt",
+      "bytes": 1475,
+      "sha256": "3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b"
+    },
+    {
+      "path": "third_party/licenses/MarkupSafe-LICENSE.txt",
+      "bytes": 1503,
+      "sha256": "4631ec0db5fd90a547e336817264c6798214338146f8ac94b4a57f96ee8c9ec4"
+    },
+    {
+      "path": "third_party/licenses/waitress-LICENSE.txt",
+      "bytes": 2070,
+      "sha256": "3e671db11df687516cc1db5b3d65e4aa383eaca3c20cea3faf53a0f7335d0a3c"
+    },
+    {
+      "path": "third_party/licenses/Werkzeug-LICENSE.txt",
+      "bytes": 1475,
+      "sha256": "3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b"
+    },
+    {
+      "path": "third_party/r2/attrs/LICENSE",
+      "bytes": 1109,
+      "sha256": "882115c95dfc2af1eeb6714f8ec6d5cbcabf667caff8729f42420da63f714e9f"
+    },
+    {
+      "path": "third_party/r2/jsonschema/COPYING",
+      "bytes": 1057,
+      "sha256": "4f92a015a13c4d1a040bef018aa13430b4f1bc73b41b16bb846c346766de7439"
+    },
+    {
+      "path": "third_party/r2/jsonschema-specifications/COPYING",
+      "bytes": 1057,
+      "sha256": "42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c"
+    },
+    {
+      "path": "third_party/r2/referencing/COPYING",
+      "bytes": 1057,
+      "sha256": "42dcd63495f87b4eb7c7757afa379bb55a53f94afd7a5f657d9adf57236e515c"
+    },
+    {
+      "path": "third_party/r2/rpds-py/LICENSE",
+      "bytes": 1076,
+      "sha256": "8bcb72c82ea8ae74802293c41d93ad7d51434001b0ae45a603a5af0f507aee0a"
+    },
+    {
+      "path": "停止有数.cmd",
+      "bytes": 245,
+      "sha256": "5a53efa7bf1b3ffc3ccff3824e1da7736a99d180999104a9a137cafbaf19e4f8"
+    },
+    {
+      "path": "启动有数.cmd",
+      "bytes": 259,
+      "sha256": "4fd388daadbf42464e187590c4541054433ac10478b01eac97c91f6d1a98967e"
+    }
+  ]
+}
